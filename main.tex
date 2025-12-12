@@ -1,0 +1,92 @@
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\input{header.tex}
+
+
+
+\title{Rapport sur les travaux effectués}
+
+
+
+\author{Paul $\mathrm{Wang}$}
+
+\date{}
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+	
+
+	
+	\setcounter{tocdepth}{2}
+	\maketitle
+	
+
+	% \footnotetext[2]{\copyright \,  2023. This manuscript version is made available under the CC-BY-NC-ND 4.0 license http://creativecommons.org/licenses/by-nc-nd/4.0/}
+	
+	%  \tableofcontents
+
+
+\section{Théorie des modèles}	
+
+
+\section{Théorie catégorique des systèmes}
+
+La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ce projet de recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques},possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, mon travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre. Il me semble utile de commencer par rappeler en quoi consistent ces deux points de vue, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes.
+
+
+\subsection{Contexte: Approche monoidale symétrique}\label{subs_smc}
+Une catégorie monoidale symétrique est une structure contenant des objets, des morphismes entre ces objets, une opération de produit sur les objets (muni de symétries canoniques), et des opérations de composition séquentielle et parallèle sur les morphismes, vérifiant des propriétés algébriques raisonnables (associativité, etc.). L'intérêt pour la représentation de systèmes dynamiques est le suivant: si l'on peut représenter les espaces d'entrées ou de sorties possibles comme des objets,  les systèmes comme des morphismes, et que l'on dispose effectivement d'opérations de compositions parallèle et séquentielle de systèmes, alors \emph{la théorie des catégories monoidales symétriques fournit automatiquement une syntaxe et des outils de raisonnement}. Les plus emblématiques sont les \emph{diagrammes de cordes}\footnote{Appelés \emph{string diagrams} en anglais; voir par exemple la page du nLab sur le sujet: \url{ncatlab.org/nlab/show/string+diagram}.}, qui permettent des calculs rigoureux fondés sur des manipulations graphiques des diagrammes. 
+
+
+Une des applications les plus marquantes est le \emph{ZX-calculus} \cite{Danos_Kashefi_Panangaden_2007}, utilisé pour représenter des calculs quantiques à base de qbits, dont les vertus pédagogiques, découlant vraisemblablement de l'approche graphique et de la relative simplicité du langage, ont été testées expérimentalement \cite{Coecke_Kissinger_Gogioso_Dündar-Coecke_Puca_Yeh_Waseem_Pothos_Pfaendler_Wang-Mascianica_et_al._2025}. Mes recherches ne sont pas centrées sur le calcul quantique, mais le \emph{principe} sous-jacent aux travaux susmentionnés, consistant à \emph{développer des langages mathématiques relativement simples et synthétiques\footnote{{Par opposition à analytiques, voir \ref{subs_th_synth_proba}}}}, en autorisant en revanche la \emph{sémantique} à varier en complexité, est au coeur de celui-ci.  
+
+%\noindent Un exemple d'approche similaire à la mienne, mais restreinte au cadre "monoidal symétrique", se trouve dans l'article de Broadbent et Karvonen \cite{Broadbent_Karvonen_2023}. En effet, 
+
+\subsection{Contexte: point de vue coalgébrique}\label{subs_coalg}
+Pour illustrer le point de vue coalgébrique sur les systèmes, utilisons l'exemple des machines de Moore\footnote{notion qui généralise celle d'automate fini déterministe}. Une machine de Moore est définie par des ensembles d'états, entrées et sorties, notés respectivement $S$, $I$, et $O$, et des fonctions de sortie $S \rightarrow O$, et de mise à jour d'état $S \times I \rightarrow S$.  L'observation est alors que, pour $I$ et $O$ fixés, la donnée d'une machine de Moore est équivalente à la donnée d'un ensemble $S$, et d'une fonction $S \rightarrow O \times S^I$, c'est-à-dire d'un objet $S$ de la catégorie des ensembles, muni d'un morphisme $S \rightarrow F(S)$, où $F$ désigne le foncteur $X \mapsto O \times X^I$. Autrement dit, une machine de Moore est une coalgèbre pour le foncteur $F$. Cette observation n'est pas restreinte au cas des machines de Moore, mais se décline sur un grand nombre d'exemples. Voir \cite[Section 3]{Rutten_2000}. 
+
+
+Partant de ce principe, l'on peut ensuite définir\footnote{Il s'agit davantage d'\emph{identifier une structure commune} à des théories de systèmes, d'\emph{organiser l'information}, que de mener une étude axiomatique approfondie à partir de telles définitions.} un système comme étant une coalgèbre pour un foncteur $F: \CC \rightarrow \CC$, étant entendu que la notion dépend fortement de $F$, en particulier, le choix de $F$ détermine une "interface" commune. Une \emph{simulation} d'un système vers un autre est alors simplement un morphisme de coalgèbres; dans la plupart des exemples, cette notion traduit l'idée de "morphisme de comparaison entre espaces d'états, \emph{agissant identiquement sur les interfaces}, compatible avec les dynamiques des systèmes considérés". Des notions plus symétriques, de \emph{bisimulation} et \emph{bisimilarité}, peuvent ensuite être définies \cite{Staton_2009}.
+
+
+Le point de vue coalgébrique a donné lieu à un certain nombre de développements, notamment au niveau logique \cite{Kurz} \cite{Gallardo_Viglizzo_2024}; l'un des objectifs à moyen terme de mon  programme de recherche est d'adapter, si cela s'avère possible, ces travaux au cadre doublement catégorique.
+
+
+\subsection{Théorie synthétique des probabilités et du nondéterminisme}\label{subs_th_synth_proba}
+
+Avant de présenter la théorie doublement catégorique des systèmes, je souhaite m'attarder sur un élément important au niveau "monoidal symétrique", à savoir la \emph{théorie synthétique des probabilités}, fondée sur la notion de catégorie de Markov \cite[Definition 2.1]{FRITZ-MarkovCats}. L'idée est d'axiomatiser le comportement des \emph{noyaux de Markov} entre espaces mesurables, qui à chaque élément de la source associent une mesure de probabilité sur l'espace d'arrivée, qui "varie de manière mesurable" (voir \cite[Section 1]{Perrone2022MarkovCA} et \cite{Giry_1982}). Comme les noyaux de Markov sont munis d'opération de compositions parallèle et séquentielle, \emph{le cadre monoidal symétrique est pertinent}. Cependant, de la structure additionnelle existe, en l'occurrence, pour tout espace mesurable $X$, l'unique noyau de Markov $del_X$, de $X$ vers l'espace singleton, ainsi que la fonction mesurable diagonale $copy_X: X \rightarrow X \times X$. Abstrayant à partir de cet exemple, une \emph{catégorie de Markov} est définie comme étant une catégorie monoidale symétrique où tout objet $X$ est muni de morphismes $del_X: X \rightarrow 1$ et $copy_X: X \rightarrow X \otimes X$, telle que ces morphismes vérifient un certain nombre de propriétés algébriques simples.
+
+
+
+Notons que ces axiomes admettent des modèles variés, dont certains représentent des notions de nondéterminisme \emph{possibilistes}, c'est-à-dire où l'incertitude correspond à des \emph{ensembles d'issues possibles}, sans mesure de probabilité pour la quantifier. L'opération consistant à associer à une mesure de probabilité (raisonnable) son \emph{support} induit alors un 
+foncteur entre les catégories de Markov correspondantes, représentant l'oubli d'information. Ces considérations ont une importance pour les applications à l'étude des systèmes d'IA: un certain nombre de résultats expérimentaux utilisant des méthodologies moins robustes\footnote{Faute de moyens, parfois.}, ou avec des analyses statistiques peu fournies, peuvent être considérés comme \emph{possibilistes}, et ainsi avoir des conclusions en adéquation avec leurs méthodes.
+
+
+Un point important, comme expliqué par Tobias Fritz dans l'introduction de \cite{FRITZ-MarkovCats}, est que cette approche est \emph{axiomatique et synthétique}: il s'agit d'étudier le \emph{comportement} des objets à un niveau relativement abstrait, plutôt que de s'appuyer sur des descriptions (ensemblistes par exemple) très précises. Parmi les exemples d'approches synthétiques fructueuses en mathématiques, on pourra penser à la théorie des \emph{catégories abéliennes}, qui donne un cadre efficace pour traiter des questions d'algèbre homologique, à la théorie des \emph{infini-cosmos} \cite{Riehl_Verity_2022}, qui axiomatise non pas les infini-catégories, mais les 
+univers dans lesquels elles interagissent en tant qu'objets, appelés infini-cosmos\footnote{Ce point de vue permet un traitement \emph{indépendant du modèle combinatoire} choisi pour définir ce qu'est une infini-catégorie, ce qui a son importance étant donné la pluralité des modèles existants.}. 
+
+
+\subsection{Théorie doublement catégorique des systèmes}
+Comme mentionné plus haut, la théorie doublement catégorique des systèmes vise à combiner un point de vue sur la \emph{composition} de systèmes et des notions de \emph{comparaisons}, ou \emph{simulations généralisées} entre systèmes. Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}\footnote{Voir \url{ncatlab.org/nlab/show/double+category} ou \cite[Introduction]{Dawson_Pare_1993} pour plus de détails}. En effet, une catégorie double (stricte) est définie par deux catégories sur la même classe d'objets, parfois appelées les catégories \emph{verticale} et \emph{horizontale}, ainsi que la donnée de $2$-cellules, pour tout quadruplet de morphismes formant les côtés parallèles d'un carré. Les $2$-cellules sont parfois appelées \emph{carrés}, et sont munies d'opération de composition verticale et horizontale, associatives unitaires, satisfaisant la loi d'échange.
+Ainsi, l'on peut utiliser l'une des directions pour encoder la composition de systèmes, et l'autre pour les simulations généralisées entre interfaces, et entre systèmes. \emph{La loi d'échange représente alors une condition de compatibilité cruciale entre composition de systèmes et composition de simulations généralisées}.
+
+
+
+
+\printbibliography[
+heading=bibintoc,
+title={Bibliographie}
+]
+
+    
+\end{document}
