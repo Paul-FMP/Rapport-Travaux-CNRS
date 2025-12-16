@@ -35,17 +35,112 @@
 	
 	%  \tableofcontents
 
+\section{Contexte: Théorie géométrique des modèles}
 
-\section{Théorie des modèles}	
-
-\subsection{Article publié: Extending Hrushovski's groupoid-cover correspondence using simplicial groupoids}
-
+La théorie des modèles (du premier ordre) vise à étudier des structures et théories (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. 
 
 
-\subsection{Article publié: The group configuration theorem for generically stable types}
+
+\section{Article publié: Extending Hrushovski's groupoid-cover correspondence using simplicial groupoids}
 
 
-\subsection{Article soumis: On groups and fields interpretable in $\mathrm{NTP}_2$ fields}
+
+\section{Article publié: The group configuration theorem for generically stable types}
+
+Le principe du théorème de configuration de groupe est de \emph{détecter la présence d'un groupe définissable}\footnote{C'est-à-dire, un groupe dont l'ensemble sous-jacent et la loi sont définissables.} \emph{à partir de données combinatoires}. Ce résultat s'inscrit dans le domaine de la \emph{théorie géométrique des modèles}, mentionnée plus haut, qui étudie les théories du premier ordre à travers les structures algébriques définissables qui y apparaissent. 
+
+
+Une configuration de groupe est la donnée de $6$ éléments vérifiant des propriétés d'indépendance et de dépendance bien spécifiques; l'exemple essentiel est le suivant: soit $G$ un groupe définissable dans une théorie stable\footnote{Ceci signifie qu'aucune relation définissable n'induit une relation d'ordre total infini; il s'agit d'une hypothèse forte de modération combinatoire.}, par exemple la théorie des corps algébriquement clos, et soient $g_1$, $g_2$, $g_3$ des éléments \emph{génériques} de $G$, formant une \emph{famille indépendante}\footnote{Par exemple, si $G = \mathrm{GL}_n(\mathbb{C})$, la conjonction de ces deux conditions correspond à demander que les $g_i$ soient en position générale; l'ensemble des triplets de $\mathrm{GL}_n(\mathbb{C})$ ne vérifiant pas cette propriété est négligeable pour la mesure de Lebesgue restreinte à ${\mathrm{GL}_n(\mathbb{C})} \times {\mathrm{GL}_n(\mathbb{C})} \times {\mathrm{GL}_n(\mathbb{C})} $.}. Alors, le diagramme ci-dessous est une configuration de groupe: 
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\coordinate (b3) at (0,0) ;
+\coordinate (b2) at (0,-1) ;
+\coordinate (b1) at (0,-2) ;
+\coordinate (a2) at (1,-0.5) ;
+\coordinate (a1) at (2,-1) ;
+\coordinate (a3) at (1,-1) ;
+
+
+\draw (b3) -- (a1);
+\draw (b3) -- (b1);
+\draw (b2) -- (a1);
+\draw (b1) -- (a2);
+
+%\path [name intersections={of=CD1 and BE1, name=(f1)}];
+
+\draw (b3) node [above] {\(g_2 \cdot g_1\)};
+\draw (b2) node [left] {\(g_{2}\)};
+\draw (b1) node [left] {\(g_{1}\)};
+\draw (a2) node [right] {\(g_3\)};
+\draw (a1) node [right] {\(g_1 \cdot g_3\)};
+\draw (a3) node [below] {\(g_2 \cdot g_1 \cdot g_3\)};
+
+\end{tikzpicture}
+\end{center}
+
+En effet, les deux propriétés définissant la notion de configuration de groupe \emph{régulière}\footnote{Il existe en effet une définition, et un théorème, pour des \emph{actions de groupe} plus générales qu'une action par translation d'un groupe sur lui-même; par souci de concision, les détails ne seront pas mentionnés.} sont les suivantes:
+
+\begin{itemize}
+	\item Sur le diagramme, tout triplet de points non alignés forme une famille indépendante\footnote{Toute théorie stable vient avec une notion canonique d'indépendance; une partie de la difficulté technique est de travailler avec des généralisations ayant un sens pour des théories instables.}.
+	\item Pour toute ligne du diagramme, chaque point est algébrique sur les deux autres\footnote{Ce qui signifie qu'il est \emph{d'orbite finie} sous l'action des automorphismes de la structure ambiante fixant les deux autres éléments; de manière équivalente, il existe une formule ayant un nombre fini de solutions, parmi lesquelles le point en question, utilisant comme paramètres les deux autres éléments.}.
+\end{itemize}
+
+
+
+L'énoncé du théorème de configuration de groupe pour les théories stables, attribué à Hrushovski, est le suivant: 
+
+\begin{theorem}
+	Pour toute configuration de groupe (régulière) dans une théorie stable, il existe un groupe définissable\footnote{Techniquement, \emph{type-définissable}, une variante légèrement plus générale, où l'on autorise les intersections infinies d'ensembles définissables.} $\Gamma$ et trois éléments $g_1$, $g_2$, $g_3$ du groupe $\Gamma$, génériques et indépendants, tels que la configuration de groupe initiale et celle de $\Gamma$ construite à partir des $g_i$ sont équivalentes, c'est-à-dire interalgébriques point à point.
+
+
+	De plus, \emph{un tel groupe est essentiellement unique}: étant données deux configurations de groupe équivalentes construites à partir d'éléments génériques indépendants pour deux groupes définissables $\Gamma$ et $\Gamma'$, il existe une isogénie virtuelle\footnote{Autrement dit, un sous-groupe normal de $\Gamma \times \Gamma'$ pour lequel les projections vers $\Gamma$ et $\Gamma'$ sont à fibres finies, et d'images d'indice fini.} définissable entre $\Gamma$ et $\Gamma'$.
+
+\end{theorem}
+
+
+Autrement dit, les exemples présentés plus haut sont essentiellement les seuls: dans une théorie stable, tout sextuplet d'éléments vérifiant les propriétés d'indépendance et d'algébricité ci-dessus provient de génériques indépendants d'un groupe définissable.
+
+
+
+La seule variante du théorème de configuration de groupe démontrée, jusque-là, hors du cadre des théories stables, de Ben Yaacov-Tomasic-Wagner \cite{}, repose sur une hypothèse moins forte de \emph{simplicité} de la théorie ambiante, au prix d'une conclusion moins forte également: le groupe obtenu n'est que "presque hyper-définissable".
+
+\subsection{Contributions}
+Dans l'article publié \cite{}, je démontre une généralisation du théorème de configuration de groupe originel, en supposant uniquement que le sextuplet considéré définit un \emph{type génériquement stable}, c'est-à-dire que les suites de copies indépendantes de ce sextuplet se comportent comme si elles étaient dans une théorie stable. L'énoncé est essentiellement le même, à ceci près que je donne un contrôle plus précis sur les paramètres/éléments utilisés dans la construction, qui peut être utile pour des applications du théorème. La structure de la preuve est similaire.
+
+Au niveau technique, l'essentiel du travail a consisté à utiliser de manière précise les propriétés des types génériquement stables, en particulier la notion d'indépendance fournie par la théorie des modèles abstraite, qui se comporte \emph{presque} aussi bien que dans le cas des théories stables.
+
+
+
+Pour ce qui est des applications, au vu des résultats obtenus dans des contextes stables en utilisant le théorème de configuration de groupe originel, cette généralisation est un pas vers le développement de résultats analogues reposant sur les types génériquement stables.
+
+
+
+\section{Article soumis: On groups and fields interpretable in $\mathrm{NTP}_2$ fields}
+
+
+
+\subsection{Contributions}
+
+Dans l'article \cite{}
+
+
+
+\section{Article soumis: Residually Dominated Groups in Henselian Valued
+Fields of Equicharacteristic Zero, avec Dicle Mutlu}
+
+\subsection{Contributions personnelles}
+
+
+
+\section{Contribution incluse dans la thèse: On groups and fields definable in D-henselian fields}
+
+
+\subsection{Contributions}
+
+
 
 
 
@@ -86,7 +181,7 @@ univers dans lesquels elles interagissent en tant qu'objets, appelés infini-cos
 
 
 \subsection{Contexte: Théorie doublement catégorique des systèmes}
-Comme mentionné plus haut, la théorie doublement catégorique des systèmes vise à combiner un point de vue sur la \emph{composition} de systèmes et des notions de \emph{comparaisons}, ou \emph{simulations généralisées} entre systèmes. Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}\footnote{Voir \url{ncatlab.org/nlab/show/double+category} ou \cite[Introduction]{Dawson_Pare_1993} pour plus de détails}. En effet, une catégorie double (stricte) est définie par deux catégories sur la même classe d'objets, parfois appelées les catégories \emph{verticale} et \emph{horizontale}, ainsi que la donnée de $2$-cellules, pour tout quadruplet de morphismes formant les côtés parallèles d'un carré. Les $2$-cellules sont parfois appelées \emph{carrés}, et sont munies d'opération de composition verticale et horizontale, associatives unitaires, satisfaisant la loi d'échange.
+Comme mentionné plus haut, la théorie doublement catégorique des systèmes vise à combiner un point de vue sur la \emph{composition} de systèmes et des notions de \emph{comparaisons}, ou \emph{simulations généralisées} entre systèmes. Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}\footnote{Voir \url{ncatlab.org/nlab/show/double+category} ou \cite[Introduction]{Dawson_Pare_1993} pour plus de détails}. En effet, une catégorie double (stricte) est définie par deux catégories sur la même classe d'objets, parfois appelées les catégories \emph{verticale} et \emph{horizontale}, ainsi que la donnée de $2$-cellules, pour tout quadruplet de morphismes formant les côtés parallèles d'un carré. Les $2$-cellules sont parfois appelées \emph{carrés}, et sont munies d'opération de composition verticale et horizontale, associatives unitaires, satisfaisant la loi d'échange. Remarquons que cette notion est plus générale que celle, plus courante, de $2$-catégorie\footnote{Voir \url{ncatlab.org/nlab/show/2-category}}; la différence est importante ici, car elle permet de considérer des simulations généralisées entre systèmes n'ayant pas la même interface.
 Ainsi, l'on peut utiliser l'une des directions pour encoder la composition de systèmes, et l'autre pour les simulations généralisées entre interfaces, et entre systèmes. \emph{La loi d'échange représente alors une condition de compatibilité cruciale entre composition de systèmes et composition de simulations généralisées}.
 Etant donné des systèmes $S$ et $T$, vus comme cellules de dimension $1$ dans la catégorie double en jeu, un \emph{comportement} de forme $S$ dans $T$ est défini comme étant un morphisme de systèmes de $S$ vers $T$, i.e. une $2$-cellule. L'idée est ainsi que chaque système \emph{représente} un type de comportement, et une question importante (cf \cite[Fin de la Section 3.5]{DCST-book}) est de trouver des systèmes (nécessairement simples) représentant les notions de \emph{trajectoires}, nondéterministes en l'occurrence.
 
@@ -112,7 +207,7 @@ Les idées que j'utilise sont les suivantes:
 	\item La catégorie de Markov $\CC$ représente la notion de nondéterminisme de la théorie de systèmes à construire.
 	\item Le graphe $\GG$ représente la notion de temps considérée; pour des raisons propres au nondéterminisme\footnote{Précisément, le fait qu'une loi sur un produit contienne plus d'information que la donnée de ses marginales}, et par absence de structure monoidale close ou cartésienne close pertinente\footnote{C'est-à-dire où les espaces de morphismes seraient représentés par des objets de la catégorie}, je traite le temps de manière externe à $\CC$. 
 	\item L'existence de lois conditionnelles dans $\CC$ permet de définir la composée verticale des $2$-cellules, ce qui correspond à \emph{construire des trajectoires jointes de systèmes composés}, en faisant une \emph{hypothèse d'indépendance conditionnelle des composants relativement à l'information aux interfaces}. 
-	\item A partir de l'idée du point ci-dessus, l'essentiel du travail technique consiste à vérifier les propriétés algébriques requise; associativité et échange demandent le plus d'efforts.
+	\item A partir de l'idée du point ci-dessus, l'essentiel du travail technique consiste à vérifier les propriétés algébriques requises; associativité et échange demandent le plus d'efforts.
 	\item Afin de simplifier la rédaction, ainsi que les démonstrations futures de fonctorialité de la construction vis-à-vis de $\CC$ et de $\GG$, je construis d'abord des \emph{catégories triples}, où la dimension supplémentaire sert à gérer le temps, avant d'en déduire les catégories doubles voulues comme catégories de foncteurs "de source $\GG$" à valeurs dans ces catégories triples.
 \end{enumerate}
 
