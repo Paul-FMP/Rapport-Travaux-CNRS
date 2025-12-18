@@ -146,7 +146,7 @@ Fields of Equicharacteristic Zero, avec Dicle Mutlu}
 
 \section{Prépublication: Comportements nondéterministes en théorie doublement catégorique des systèmes}
 
-La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ce projet de recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques},possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, ce travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre; il repose également sur la théorie synthétique des probabilités. Il me semble utile de commencer par rappeler en quoi consistent les points de vue "monoidal symétrique" et "coalgébrique", ainsi que la théorie synthétique des probabilités, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes, et mes contributions.
+La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ce projet de recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques}, possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, ce travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre; il repose également sur la théorie synthétique des probabilités. Il me semble utile de commencer par rappeler en quoi consistent les points de vue "monoidal symétrique" et "coalgébrique", ainsi que la théorie synthétique des probabilités, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes, et mes contributions.
 
 
 \subsection{Contexte: Approche monoidale symétrique}\label{subs_smc}
@@ -157,7 +157,18 @@ Une des applications les plus marquantes est le \emph{ZX-calculus} \cite{Danos_K
 
 
 \subsection{Contexte: point de vue coalgébrique}\label{subs_coalg}
-Pour illustrer le point de vue coalgébrique sur les systèmes, utilisons l'exemple des machines de Moore\footnote{notion qui généralise celle d'automate fini déterministe}. Une machine de Moore est définie par des ensembles d'états, entrées et sorties, notés respectivement $S$, $I$, et $O$, et des fonctions de sortie $S \rightarrow O$, et de mise à jour d'état $S \times I \rightarrow S$.  L'observation est alors que, pour $I$ et $O$ fixés, la donnée d'une machine de Moore est équivalente à la donnée d'un ensemble $S$, et d'une fonction $S \rightarrow O \times S^I$, c'est-à-dire d'un objet $S$ de la catégorie des ensembles, muni d'un morphisme $S \rightarrow F(S)$, où $F$ désigne le foncteur $X \mapsto O \times X^I$. Autrement dit, une machine de Moore est une coalgèbre pour le foncteur $F$. Cette observation n'est pas restreinte au cas des machines de Moore, mais se décline sur un grand nombre d'exemples. Voir \cite[Section 3]{Rutten_2000}. 
+Pour illustrer le point de vue coalgébrique sur les systèmes, utilisons l'exemple des machines de Moore\footnote{notion qui généralise celle d'automate fini déterministe}. 
+
+\begin{mdframed}{\textbf{Machines de Moore comme coalgèbres}}
+
+
+	Une machine de Moore est définie par des ensembles\footnote{Plus généralement, des objets.} d'états, entrées et sorties, notés respectivement $S$, $I$, et $O$, et des fonctions\footnote{Plus généralement, des morphismes.} de sortie $S \rightarrow O$, et de mise à jour d'état $S \times I \rightarrow S$.  
+	
+	
+	L'observation est alors que, pour $I$ et $O$ fixés, la donnée d'une machine de Moore est équivalente à la donnée d'un ensemble $S$, et d'une fonction $S \rightarrow O \times S^I$, c'est-à-dire d'un objet $S$ de la catégorie des ensembles, muni d'un morphisme $S \rightarrow F(S)$, où $F$ désigne le foncteur $X \mapsto O \times X^I$. Autrement dit, une machine de Moore est une coalgèbre pour le foncteur $F$. Cette observation n'est pas restreinte au cas des machines de Moore, mais se décline sur un grand nombre d'exemples. Voir \cite[Section 3]{Rutten_2000}. 
+
+\end{mdframed}
+
 
 
 Partant de ce principe, l'on peut ensuite définir\footnote{Il s'agit davantage d'\emph{identifier une structure commune} à des théories de systèmes, d'\emph{organiser l'information}, que de mener une étude axiomatique approfondie à partir de telles définitions.} un système comme étant une coalgèbre pour un foncteur $F: \CC \rightarrow \CC$, étant entendu que la notion dépend fortement de $F$, en particulier, le choix de $F$ détermine une "interface" commune. Une \emph{simulation} d'un système vers un autre est alors simplement un morphisme de coalgèbres; dans la plupart des exemples, cette notion traduit l'idée de "morphisme de comparaison entre espaces d'états, \emph{agissant identiquement sur les interfaces}, compatible avec les dynamiques des systèmes considérés". Des notions plus symétriques, de \emph{bisimulation} et \emph{bisimilarité}, peuvent ensuite être définies \cite{Staton_2009}.
@@ -166,9 +177,13 @@ Partant de ce principe, l'on peut ensuite définir\footnote{Il s'agit davantage 
 %Le point de vue coalgébrique a donné lieu à un certain nombre de développements, notamment au niveau logique \cite{Kurz} \cite{Gallardo_Viglizzo_2024}; l'un des objectifs à moyen terme de mon  programme de recherche est d'adapter, si cela s'avère possible, ces travaux au cadre doublement catégorique.
 
 
-\subsection{Contexte: Théorie synthétique des probabilités et du nondéterminisme}\label{subs_th_synth_proba}
+\subsection{Contexte: Théorie synthétique des probabilités et du nondéterminisme, catégories de Markov}\label{subs_th_synth_proba}
 
-Avant de présenter la théorie doublement catégorique des systèmes, je souhaite m'attarder sur un élément important au niveau "monoidal symétrique", à savoir la \emph{théorie synthétique des probabilités}, fondée sur la notion de catégorie de Markov \cite[Definition 2.1]{FRITZ-MarkovCats}. L'idée est d'axiomatiser le comportement des \emph{noyaux de Markov} entre espaces mesurables, qui à chaque élément de la source associent une mesure de probabilité sur l'espace d'arrivée, qui "varie de manière mesurable" (voir \cite[Section 1]{Perrone2022MarkovCA} et \cite{Giry_1982}). Comme les noyaux de Markov sont munis d'opération de compositions parallèle et séquentielle, \emph{le cadre monoidal symétrique est pertinent}. Cependant, de la structure additionnelle existe, en l'occurrence, pour tout espace mesurable $X$, l'unique noyau de Markov $del_X$, de $X$ vers l'espace singleton, ainsi que la fonction mesurable diagonale $copy_X: X \rightarrow X \times X$. Abstrayant à partir de cet exemple, une \emph{catégorie de Markov} est définie comme étant une catégorie monoidale symétrique où tout objet $X$ est muni de morphismes $del_X: X \rightarrow 1$ et $copy_X: X \rightarrow X \otimes X$, telle que ces morphismes vérifient un certain nombre de propriétés algébriques simples.
+Avant de présenter la théorie doublement catégorique des systèmes, je souhaite m'attarder sur un élément important au niveau "monoidal symétrique", à savoir la \emph{théorie synthétique des probabilités}, fondée sur la notion de catégorie de Markov \cite[Definition 2.1]{FRITZ-MarkovCats}. L'idée est d'axiomatiser le comportement des \emph{noyaux de Markov} entre espaces mesurables, qui à chaque élément de la source associent une mesure de probabilité sur l'espace d'arrivée, qui "varie de manière mesurable" (voir \cite[Section 1]{Perrone2022MarkovCA} et \cite{Giry_1982}). Comme les noyaux de Markov sont munis d'opération de compositions parallèle et séquentielle, \emph{le cadre monoidal symétrique est pertinent}. Cependant, de la structure additionnelle existe, en l'occurrence, pour tout espace mesurable $X$, l'unique noyau de Markov $del_X$, de $X$ vers l'espace singleton, ainsi que la fonction mesurable diagonale $copy_X: X \rightarrow X \times X$. Abstrayant à partir de cet exemple:
+
+\begin{mdframed}{\textbf{Définition:}}
+Une \emph{catégorie de Markov} est une catégorie monoidale symétrique où tout objet $X$ est muni de morphismes $del_X: X \rightarrow 1$ et $copy_X: X \rightarrow X \otimes X$, telle que ces morphismes vérifient un certain nombre de propriétés algébriques simples.
+\end{mdframed}
 
 
 
@@ -181,10 +196,56 @@ univers dans lesquels elles interagissent en tant qu'objets, appelés infini-cos
 
 
 \subsection{Contexte: Théorie doublement catégorique des systèmes}
-Comme mentionné plus haut, la théorie doublement catégorique des systèmes vise à combiner un point de vue sur la \emph{composition} de systèmes et des notions de \emph{comparaisons}, ou \emph{simulations généralisées} entre systèmes. Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}\footnote{Voir \url{ncatlab.org/nlab/show/double+category} ou \cite[Introduction]{Dawson_Pare_1993} pour plus de détails}. En effet, une catégorie double (stricte) est définie par deux catégories sur la même classe d'objets, parfois appelées les catégories \emph{verticale} et \emph{horizontale}, ainsi que la donnée de $2$-cellules, pour tout quadruplet de morphismes formant les côtés parallèles d'un carré. Les $2$-cellules sont parfois appelées \emph{carrés}, et sont munies d'opération de composition verticale et horizontale, associatives unitaires, satisfaisant la loi d'échange. Remarquons que cette notion est plus générale que celle, plus courante, de $2$-catégorie\footnote{Voir \url{ncatlab.org/nlab/show/2-category}}; la différence est importante ici, car elle permet de considérer des simulations généralisées entre systèmes n'ayant pas la même interface.
-Ainsi, l'on peut utiliser l'une des directions pour encoder la composition de systèmes, et l'autre pour les simulations généralisées entre interfaces, et entre systèmes. \emph{La loi d'échange représente alors une condition de compatibilité cruciale entre composition de systèmes et composition de simulations généralisées}.
-Etant donné des systèmes $S$ et $T$, vus comme cellules de dimension $1$ dans la catégorie double en jeu, un \emph{comportement} de forme $S$ dans $T$ est défini comme étant un morphisme de systèmes de $S$ vers $T$, i.e. une $2$-cellule. L'idée est ainsi que chaque système \emph{représente} un type de comportement, et une question importante (cf \cite[Fin de la Section 3.5]{DCST-book}) est de trouver des systèmes (nécessairement simples) représentant les notions de \emph{trajectoires}, nondéterministes en l'occurrence.
+Comme mentionné plus haut, la théorie doublement catégorique des systèmes vise à combiner un point de vue sur la \emph{composition} de systèmes et des notions de \emph{comparaisons}, ou \emph{simulations généralisées} entre systèmes. L'un des objectifs est de donner des principes et méthodes, étayés par la théorie, pour la \emph{modélisation collaborative}; les projets les plus saillants dans ce domaine sont ModelCollab \cite{UofS-CEPHIL/modelcollab_2025}  et CatColab \cite{Carlson_2024}.
 
+Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}\footnote{Voir \url{ncatlab.org/nlab/show/double+category} ou \cite[Introduction]{Dawson_Pare_1993} pour plus de détails}. 
+
+\begin{mdframed}{\textbf{Catégories doubles et simulations généralisées:}}
+\begin{itemize}
+	\item 	Une catégorie double (stricte) est définie par deux catégories sur la même classe d'objets, parfois appelées les catégories \emph{verticale} et \emph{horizontale}, ainsi que la donnée de $2$-cellules, pour tout quadruplet de morphismes formant les côtés parallèles d'un carré. Les $2$-cellules sont parfois appelées \emph{carrés}, et sont munies d'opération de composition verticale et horizontale, associatives unitaires, satisfaisant la loi d'échange. 
+
+	\item 	Etant donnés des systèmes $S$ et $T$, vus comme cellules de dimension $1$ dans la catégorie double en jeu, un \emph{comportement} de forme $S$ dans $T$, ou \emph{simulation généralisée} de $S$ vers $T$, ou \emph{morphisme de systèmes} de $S$ vers $T$, est défini comme étant une $2$-cellule. Ainsi, le principe est de construire des catégories doubles où l'une des directions encode la composition de systèmes, et l'autre les simulations généralisées entre interfaces, et entre systèmes. \emph{La loi d'échange représente alors une condition de compatibilité cruciale entre composition de systèmes et composition de simulations généralisées}.
+
+	
+	\item Une idée importante est que chaque système \emph{représente} un type de comportement, et une question (cf \cite[Fin de la Section 3.5]{DCST-book}) est de trouver des systèmes (nécessairement simples) représentant les notions de \emph{trajectoires}, nondéterministes en l'occurrence.
+	\item 	Remarquons que la notion de catégorie double est plus générale que celle, plus courante, de $2$-catégorie\footnote{Voir \url{ncatlab.org/nlab/show/2-category}}; la différence n'est pas anecdotique, car les catégories doubles permettent \emph{considérer des simulations généralisées entre systèmes n'ayant pas la même interface}.
+
+\end{itemize}
+
+	
+
+
+
+
+	
+
+\end{mdframed}
+
+
+
+
+
+
+
+
+\subsection{Questions}
+\begin{mdframed}{\textbf{Questions:}}
+\begin{itemize}
+	\item Comment définir une notion de "simulation généralisée" entre systèmes nondéterministes (stochastiques, possibilistes, etc.) pouvant inclure du nondéterminisme, dans un cadre doublement catégorique ?
+	\item Comment répondre à la première question de manière paramétrique/fonctorielle en la notion de nondéterminisme ?
+	\item Comment capturer, dans une définition uniforme, les systèmes à temps discret et à temps continu ?
+\end{itemize}
+
+\end{mdframed}
+
+
+
+\subsection{Travaux existants}
+\begin{itemize}
+	\item Dans \cite{Baez_Courser_2018}, une catégorie double est construite, où une direction encode des processus de Markov ouverts, donc des systèmes probabilistes, et l'autre des fonctions de \emph{coarse-graining}. La principale restriction est que ces fonctions sont déterministes.
+	\item Dans \cite{DCST-book} et \cite{Libkind_Myers_2025}, les constructions utilisent la notion de \emph{monade commutative} pour le nondéterminisme; elles donnent bien des catégories doubles, mais la notion de simulation généralisée est trop restrictive, comme expliqué dans \cite[Fin de la section 3.5]{DCST-book}.
+
+\end{itemize}
 
 \subsection{Contributions}
 
@@ -196,20 +257,23 @@ Cette construction permet de capturer des classes d'exemples précédemment non 
 \begin{itemize}
 	\item Les systèmes (ouverts) gouvernés par des Equations Différentielles Stochastiques.
 	\item Les automates nondéterministes.
-	\item Les processus de décision de Markov (i.e. processus de Markov ouverts, pouvant interagir avec un environnement extérieur).
+	\item Les processus de décision de Markov partiellement observables (i.e. processus de Markov pouvant interagir avec un environnement extérieur).
 \end{itemize}
 
 
 
-Les idées que j'utilise sont les suivantes:
+Au niveau technique, mes constructions reposent sur un certain nombre d'idées.
 
+\begin{mdframed}{\textbf{Idées:}}
+	
 \begin{enumerate}
-	\item La catégorie de Markov $\CC$ représente la notion de nondéterminisme de la théorie de systèmes à construire.
-	\item Le graphe $\GG$ représente la notion de temps considérée; pour des raisons propres au nondéterminisme\footnote{Précisément, le fait qu'une loi sur un produit contienne plus d'information que la donnée de ses marginales}, et par absence de structure monoidale close ou cartésienne close pertinente\footnote{C'est-à-dire où les espaces de morphismes seraient représentés par des objets de la catégorie}, je traite le temps de manière externe à $\CC$. 
+	\item La catégorie de Markov $\CC$ avec lois conditionnelles représente la notion de nondéterminisme de la théorie de systèmes à construire.
+	\item Le graphe $\GG$ représente la notion de temps considérée; pour des raisons propres au nondéterminisme\footnote{Précisément, le fait qu'une loi sur un produit contienne plus d'information que la donnée de ses marginales.}, et par absence de structure monoidale close ou cartésienne close pertinente\footnote{C'est-à-dire où les espaces de morphismes seraient représentés par des objets de la catégorie elle-même.}, je traite le temps de manière externe à $\CC$. 
 	\item L'existence de lois conditionnelles dans $\CC$ permet de définir la composée verticale des $2$-cellules, ce qui correspond à \emph{construire des trajectoires jointes de systèmes composés}, en faisant une \emph{hypothèse d'indépendance conditionnelle des composants relativement à l'information aux interfaces}. 
 	\item A partir de l'idée du point ci-dessus, l'essentiel du travail technique consiste à vérifier les propriétés algébriques requises; associativité et échange demandent le plus d'efforts.
 	\item Afin de simplifier la rédaction, ainsi que les démonstrations futures de fonctorialité de la construction vis-à-vis de $\CC$ et de $\GG$, je construis d'abord des \emph{catégories triples}, où la dimension supplémentaire sert à gérer le temps, avant d'en déduire les catégories doubles voulues comme catégories de foncteurs "de source $\GG$" à valeurs dans ces catégories triples.
 \end{enumerate}
+\end{mdframed}
 
 
 Une observation intéressante est que le gros des calculs repose sur l'utilisation des propriétés formelles de l'indépendance conditionnelle, et que lesdites propriétés sont très similaires aux propriétés des notions d'indépendance utilisées dans mes travaux précédents, en théorie des modèles. Il ne s'agit pas d'une coïncidence: d'après l'article \cite{Yaacov_2013}, l'indépendance conditionnelle de variables aléatoires (à valeurs dans un espace métrique) est une instance, en théorie des modèles continue, des notions d'indépendance générales présentes dans mes travaux en théorie des modèles.
