@@ -37,8 +37,13 @@
 
 \section{Contexte: Théorie géométrique des modèles}
 
-La théorie des modèles (du premier ordre) vise à étudier des structures et théories (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. 
+La théorie des modèles (du premier ordre) vise à étudier des structures et théories (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. Si la complexité combinatoire des ensembles définissables est faible, la théorie est considérée comme modérée. Par exemple, les \emph{théories stables}, définies dans \cite{Shelah-Thesis}, et étudiées plus en détail dans \cite{She-NIP}, sont celles où l'on ne peut définir d'ordre total infini.
 
+
+En logique classique, les ensembles définissables forment des algèbres de Boole (intersection, complémentaire, union); par dualité de Stone, l'on peut donc s'intéresser aux espaces topologiques profinis\footnote{C'est-à-dire compacts et dont les ouverts sont unions d'ouverts-fermés} associés. Ces espaces sont appelés \emph{espaces de types}, et donnent un point de vue plus "géométrique" pour l'étude des ensembles définissables\footnote{De même que l'étude des schémas affines peut être considérée comme plus "géométrique" que l'étude des anneaux commutatifs; en réalité, les espaces profinis sont des schémas affines où le faisceau d'anneaux peut être intégralement reconstruit à partir de la topologie, via les ouverts-fermés.}.
+
+
+Un principe général, la \emph{trichotomie de Zilber}, affirme que le comportement d'une théorie modérée dépend du type de structures algébriques définissables\footnote{C'est-à-dire, dont l'ensemble sous-jacent et les opérations sont définissables.} qui y apparaissent: ou bien aucun groupe infini définissable, ou bien des groupes abéliens infinis définissables mais pas de corps infini définissable, ou bien des corps infinis définissables. Ces idées ont été formalisées dans divers contextes, à l'instar des géométries de Zariski\footnote{Cadre visant à capturer de manière abstraite le comportement géométrique des courbes algébriques.} \cite{hru-zilber-zariski} ou des théories o-minimales\footnote{Point de vue, modèle-théorique à l'origine, sur la géométrie et l'analyse réelles, consistant à restreindre les classes de fonctions et d'ensembles afin d'exclure les comportements pathologiques.} \cite{omin-trichotomy}. Une question connexe, au coeur de mes travaux, est celle de la \emph{classification des groupes et corps définissables}, ou interprétables\footnote{Un ensemble interprétable est un quotient d'ensemble définissable par une relation d'équivalence définissable.}, dans une structure donnée.
 
 
 \section{Article publié: Extending Hrushovski's groupoid-cover correspondence using simplicial groupoids}
@@ -47,7 +52,7 @@ La théorie des modèles (du premier ordre) vise à étudier des structures et t
 
 \section{Article publié: The group configuration theorem for generically stable types}
 
-Le principe du théorème de configuration de groupe est de \emph{détecter la présence d'un groupe définissable}\footnote{C'est-à-dire, un groupe dont l'ensemble sous-jacent et la loi sont définissables.} \emph{à partir de données combinatoires}. Ce résultat s'inscrit dans le domaine de la \emph{théorie géométrique des modèles}, mentionnée plus haut, qui étudie les théories du premier ordre à travers les structures algébriques définissables qui y apparaissent. 
+Le principe du théorème de configuration de groupe est de \emph{détecter la présence d'un groupe définissable} \emph{à partir de données combinatoires}. Ce résultat s'inscrit dans le domaine de la \emph{théorie géométrique des modèles}, mentionnée plus haut, qui étudie les théories du premier ordre à travers les structures algébriques définissables qui y apparaissent. 
 
 
 Une configuration de groupe est la donnée de $6$ éléments vérifiant des propriétés d'indépendance et de dépendance bien spécifiques; l'exemple essentiel est le suivant: soit $G$ un groupe définissable dans une théorie stable\footnote{Ceci signifie qu'aucune relation définissable n'induit une relation d'ordre total infini; il s'agit d'une hypothèse forte de modération combinatoire.}, par exemple la théorie des corps algébriquement clos, et soient $g_1$, $g_2$, $g_3$ des éléments \emph{génériques} de $G$, formant une \emph{famille indépendante}\footnote{Par exemple, si $G = \mathrm{GL}_n(\mathbb{C})$, la conjonction de ces deux conditions correspond à demander que les $g_i$ soient en position générale; l'ensemble des triplets de $\mathrm{GL}_n(\mathbb{C})$ ne vérifiant pas cette propriété est négligeable pour la mesure de Lebesgue restreinte à ${\mathrm{GL}_n(\mathbb{C})} \times {\mathrm{GL}_n(\mathbb{C})} \times {\mathrm{GL}_n(\mathbb{C})} $.}. Alors, le diagramme ci-dessous est une configuration de groupe: 
@@ -101,16 +106,16 @@ L'énoncé du théorème de configuration de groupe pour les théories stables, 
 \end{theorem}
 
 
-Autrement dit, les exemples présentés plus haut sont essentiellement les seuls: dans une théorie stable, tout sextuplet d'éléments vérifiant les propriétés d'indépendance et d'algébricité ci-dessus provient de génériques indépendants d'un groupe définissable.
+Autrement dit, les exemples présentés plus haut sont essentiellement les seuls: dans une théorie stable, tout sextuplet d'éléments vérifiant les propriétés d'indépendance et d'algébricité ci-dessus provient de génériques indépendants d'un groupe définissable. Ce résultat a des conséquences remarquables: par exemple, l'existence de types réguliers localement modulaires implique l'existence de groupes abéliens infinis type-définissables avec des génériques réguliers. En d'autres termes, Hrushovski a utilisé un théorème de configuration de groupe pour \emph{prouver l'existence de groupes avec certaines propriétés}.
 
 
 
-La seule variante du théorème de configuration de groupe démontrée, jusque-là, hors du cadre des théories stables, de Ben Yaacov-Tomasic-Wagner \cite{}, repose sur une hypothèse moins forte de \emph{simplicité} de la théorie ambiante, au prix d'une conclusion moins forte également: le groupe obtenu n'est que "presque hyper-définissable".
+La seule variante du théorème de configuration de groupe démontrée, jusque-là, hors du cadre des théories stables, de Ben Yaacov-Tomasic-Wagner \cite{group-config-simple}, repose sur une hypothèse moins forte de \emph{simplicité} de la théorie ambiante, au prix d'une conclusion moins forte également: le groupe obtenu n'est que "presque hyper-définissable".
 
 \subsection{Contributions}
-Dans l'article publié \cite{}, je démontre une généralisation du théorème de configuration de groupe originel, en supposant uniquement que le sextuplet considéré définit un \emph{type génériquement stable}, c'est-à-dire que les suites de copies indépendantes de ce sextuplet se comportent comme si elles étaient dans une théorie stable. L'énoncé est essentiellement le même, à ceci près que je donne un contrôle plus précis sur les paramètres/éléments utilisés dans la construction, qui peut être utile pour des applications du théorème. La structure de la preuve est similaire.
+Dans l'article publié \cite{Wang_group_config}, je démontre une généralisation du théorème de configuration de groupe originel, en supposant uniquement que le sextuplet considéré définit un \emph{type génériquement stable}, c'est-à-dire que les suites de copies indépendantes de ce sextuplet se comportent comme si elles étaient dans une théorie stable. L'énoncé est essentiellement le même, à ceci près que je donne un contrôle plus précis sur les paramètres/éléments utilisés dans la construction, qui peut être utile pour des applications du théorème. La structure de la preuve est similaire.
 
-Au niveau technique, l'essentiel du travail a consisté à utiliser de manière précise les propriétés des types génériquement stables, en particulier la notion d'indépendance fournie par la théorie des modèles abstraite, qui se comporte \emph{presque} aussi bien que dans le cas des théories stables.
+Au niveau technique, l'essentiel du travail a consisté à utiliser de manière précise les propriétés des types génériquement stables, en particulier la notion d'indépendance fournie par la théorie des modèles abstraite, qui se comporte \emph{presque}\footnote{La subtilité technique qui a demandé le plus d'efforts est que l'on ne sait pas en général (voir \cite[Question 4.1]{Conant_Gannon_Hanson_2025}, qui donne une réponse positive pour les théories $\mathrm{NTP}_2$) si la concaténation de deux copies indépendantes d'un type génériquement stable, aussi appelée \emph{produit tensoriel} ou \emph{produit de Morley}, est elle-même génériquement stable.} aussi bien que dans le cas des théories stables.
 
 
 
@@ -118,20 +123,53 @@ Pour ce qui est des applications, au vu des résultats obtenus dans des contexte
 
 
 
+
+
+
+
 \section{Article soumis: On groups and fields interpretable in $\mathrm{NTP}_2$ fields}
 
+Dans \cite{Wang_interp_groups_2025}, j'étudie la structure des groupes et des corps définissables/interprétables, à la fois dans des cadres abstraits et pour des exemples explicites de théories du premier ordre. 
 
+
+
+\subsection{Questions}
+Etant donnée une théorie de corps (en logique du premier ordre) $T$:
+\begin{itemize}
+	\item Que peut-on dire des groupes définissables dans $T$ ? Peut-on les comparer définissablement à des groupes algébriques (en coordonnées\footnote{Les "groupes algébriques en coordonnées" sont toujours définissables, car les "variétés en coordonnées" et fonctions rationnelles le sont, puisque les opérations de corps font partie de la structure.}) ?
+	\item Quid des corps définissables dans $T$ ? Sont-ils réduits aux extensions finies\footnote{Qui sont toujours définissables, en choisissant des bases, au sens de l'algèbre linéaire.} du corps ambiant ?
+	\item Que dire si l'on généralise ces questions au cas des groupes et corps \emph{interprétables}, i.e. si l'on autorise les quotients d'ensembles définissables par relations d'équivalence définissables ?
+\end{itemize}
+
+\subsection{Travaux existants}
+\begin{itemize}
+	\item Le premier résultat, dû à Hrushovski, inspiré par les idées de \textcite{Wei-GpCh}, affirme que tout groupe définissable\footnote{En fait, "définissable" et "interprétable" sont équivalents dans les corps algébriquement clos: on dit que ceux-ci \emph{éliminent les imaginaires}.} dans un corps algébriquement clos pur est définissablement isomorphe à un groupe algébrique (en coordonnées). Cela utilise un théorème de "\emph{group chunk}", qui est une manière de reconstruire un groupe définissable à partir de données génériques, similaire au théorème de configuration de groupe.
+	\item Le résultat de Hrushovski a été utilisé dans \cite{Poi-GenNS}, pour montrer que tout corps définissable dans un corps algébriquement clos pur est définissablement isomorphe à celui-ci. S'appuyant également sur ces idées, il a été prouvé dans \cite[Proposition 2.5]{Pil-OMinGp}, que tout groupe définissable dans une structure o-minimale est naturellement un groupe topologique, que tout corps définissable dans ce contexte est soit réel clos, soit algébriquement clos, et que, dans le cas du corps pur des nombres réels, les groupes définissables sont des groupes de Lie. Ces résultats ont ensuite été étendus dans \cite[Theorems A and C]{HruPil-GpPFF}, pour montrer que tout groupe de Nash sur un corps réel ou p-adique est localement isomorphe à l'ensemble des points d'un groupe algébrique, et que tout groupe définissable dans un corps pseudo-fini\footnote{C'est-à-dire un corps infini vérifiant toutes les propriétés du premier ordre communes aux corps finis.} est virtuellement isogène à l'ensemble des points rationnels d'un groupe algébrique. En ce qui concerne les corps différentiellement clos\footnote{Qui sont les corps de caractéristique nulle munis d'une dérivation, et pour lesquels les équations différentielles algébriques ont "suffisamment de solutions".}, Pillay \textcite[Corollary 4.2]{Pillay1997SomeFQ} a prouvé que tout groupe définissable connexe se plonge dans un groupe algébrique, et Suer \textcite[Theorem 3.36]{Suer2007ModelTO} a montré que les seuls corps définissables infinis, à isomorphisme définissable près, sont le corps différentiel et le corps des constantes.
+	
+	\item Le théorème le plus général à ce jour est \cite[Theorem 2.19]{Stabilizers-NTP2}. Rappelons qu'un groupe discret est \emph{moyennable} s'il existe une mesure de probabilité finiment additive, invariante à gauche, définie sur tous les sous-ensembles. Alors, un groupe définissable, dans une certaine théorie, est dit \emph{définissablement moyennable} s'il admet une mesure de probabilité finiment additive, invariante à gauche, définie sur les ensembles définissables. Le théorème 2.19 de Montenegro, Onshuus et Simon traite des groupes définissablement moyennables dans toutes les théories de corps parfaits ayant des propriétés modèles-théoriques raisonnables\footnote{En l'occurrence, qui sont $\mathrm{NTP_2}$ et où les clôtures algébriques au sens de la théorie des modèles et au sens des corps coïncident.}. 
+	
+	\item Dans le contexte plus spécifique des corps valués, sous certaines hypothèses techniques, la classification des corps interprétables a été réalisée dans \cite[Theorem 7.1]{fields_interp_in_various_val_fields} : les seuls corps interprétables sont les extensions finies du corps ambiant ou du corps résiduel. D'autres résultats incluent les travaux réalisés dans \cite{ppp_def_groups_codf}, qui prouvent que les groupes définissables dans divers corps différentiels peuvent être définissablement plongés dans des groupes algébriques, et \cite[Theorem 1]{semisimple_groups_interp_in_various_val_fields}, montrant que les groupes définissablement semi-simples interprétables dans des enrichissements de corps valués algébriquement clos, réels clos ou  p-adiquement clos, sont virtuellement isogènes à des produits de groupes linéaires sur le corps valué et sur le corps résiduel. Dans le cas spécifique des corps valués algébriquement clos purs, la classification des corps interprétables a été initialement prouvée dans \cite{HruRK-MetaGp}, en utilisant une théorie appelée métastabilité, qui se concentre sur les types génériquement stables. Enfin, dans le cadre de la 1-h-minimalité, une notion visant à capturer l'idée de géométrie modérée dans des contextes non archimédiens, il est montré dans \cite{AcoHass-1hmin} que, comme dans le cas réel, les groupes définissables admettent une structure de Lie, et que les seuls corps définissables sont les extensions finies du corps ambiant. 
+
+
+\end{itemize}
 
 \subsection{Contributions}
 
-Dans l'article \cite{}
+%Les travaux de Halevi, Hasson et Peterzil traitent des groupes interprétables sans nécessiter une élimination complète des imaginaires, une caractéristique remarquable. Ils sont également assez précis, puisque les homomorphismes de groupes qu'ils définissent sont des isogénies virtuelles, c'est-à-dire proches d'être des isomorphismes. La principale limitation, pour ainsi dire, est que leurs outils nécessitent des hypothèses assez fortes, et ne couvrent donc que certains cas. De manière similaire, l'approche géométrique d'Acosta L\'{o}pez et Hasson produit des résultats précis, par exemple en excluant les sous-corps définissables du corps ambiant. En revanche, Peterzil, Pillay et Point construisent des plongements définissables de groupes définissables dans des groupes algébriques, dont les images peuvent être petites, pour de grandes classes de corps différentiels enrichis. Cependant, ils ne traitent pas des imaginaires, tout comme Montenegro, Onshuus et Simon.
+
+\begin{itemize}
+	\item Mon travail est similaire à \cite[Theorem 2.19]{Stabilizers-NTP2} : je démontre d'abord un théorème purement abstrait de construction de morphisme de groupes définissables, faisant intervenir deux théories $T_0$ et $T_1$, où $T_0$ est superstable \footnote{Notion de modération légèrement plus forte que la stabilité.}, $T_1$ est NIP\footnote{Notion de modération plus faible que la stabilité, couvrant les théories o-minimales, notamment le corps des réels, bon nombre de théories de corps valués, dont les corps p-adiques, etc.} et $T_0$ est une "restriction"\footnote{En un sens technique précis.} de $T_1$. 
+	
+	
+	Une notion clé est celle d'un ensemble définissable \(X\) qui \emph{ne voit pas} un autre ensemble définissable \(Y\) : cela signifie essentiellement que toutes les fonctions définissables \(X \rightarrow Y\) ont une image finie. Le résultat est alors le suivant: \emph{tout groupe définissablement moyennable dans la théorie NIP admet un morphisme de groupes définissable vers un groupe de la théorie superstable, dont le noyau ne voit pas les ensembles définissables de la théorie superstable.}
+	
+	\item Ensuite, en appliquant ce théorème abstrait, j'obtiens des résultats très généraux pour les théories de corps, et je peux couvrir plus de cas que \cite[Theorem 2.19]{Stabilizers-NTP2} : sous des hypothèses modérées, \emph{tous les groupes interprétables définissablement moyennables admettent un morphisme définissable vers un groupe algébrique sur le corps ambiant, dont le noyau ne voit pas le corps.} Autrement dit, ces groupes interprétables définissablement moyennables admettent des suites exactes courtes, où le terme de droite est un sous-groupe d'un groupe algébrique, et le terme de gauche ne voit pas le corps.
+
+\end{itemize}
+
+\section{Contribution incluse dans la thèse: Classification des anneaux définissables dans les corps algébriquement clos}
 
 
-
-\section{Article soumis: Residually Dominated Groups in Henselian Valued
-Fields of Equicharacteristic Zero, avec Dicle Mutlu}
-
-\subsection{Contributions personnelles}
 
 
 
@@ -144,7 +182,18 @@ Fields of Equicharacteristic Zero, avec Dicle Mutlu}
 
 
 
-\section{Prépublication: Comportements nondéterministes en théorie doublement catégorique des systèmes}
+\section{Article soumis: Residually Dominated Groups in Henselian Valued
+Fields of Equicharacteristic Zero, avec Dicle Mutlu}
+
+\subsection{Contributions personnelles}
+
+
+
+
+
+
+
+\section{Prépublication: Nondeterministic behaviors in double categorical systems theory}
 
 La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ce projet de recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques}, possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, ce travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre; il repose également sur la théorie synthétique des probabilités. Il me semble utile de commencer par rappeler en quoi consistent les points de vue "monoidal symétrique" et "coalgébrique", ainsi que la théorie synthétique des probabilités, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes, et mes contributions.
 
