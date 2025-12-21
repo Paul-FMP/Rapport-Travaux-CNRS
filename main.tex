@@ -168,7 +168,7 @@ Etant donnée une théorie de corps (en logique du premier ordre) $T$:
 	\item Pour ce qui est des corps interprétables, je démontre \cite[Corollaire 3.2.19]{Wang_thesis_2025}, sous hypothèses modérées, la dichotomie suivante: \emph{un corps interprétable infini admet un plongement définissable dans une extension finie du corps ambiant, ou bien ne voit pas ce dernier, auquel cas on le qualifie de \emph{purement imaginaire\footnote{Ce qui est en général le cas pour le corps résiduel d'un corps valué henselien, par exemple.}}}. 
 	
 	Cela repose sur le résultat intermédiaire \cite[Proposition 3.2.7]{Wang_thesis_2025} suivant: étant donnés deux corps infinis définissables $F$ et $K$, \emph{dans une théorie arbitraire}, si le groupe de transformations affines de $F$ se plonge définissablement dans un groupe algébrique sur $K$, alors le corps $F$ se plonge définissablement dans une extension finie de $K$. 
-	\item Je traite ensuite des exemples spécifiques: classes générales de corps valués henseliens \cite[Théorèmes 3.3.32 et 3.3.33]{Wang_thesis_2025} recouvrant les exemples déjà connus dans la littérature, et corps valués différentiellement clos\footnote{Ce sont les corps de caractéristique nulle munis d'une valuation et d'une dérivation qui "n'interagissent pas": toutes les configurations permises par l'algèbre sont réalisées, en particulier les équations différentielles algébriques ont des ensembles de solutions denses pour la topologie de la valuation.}. Pour ces derniers, je démontre \cite[Théorème 3.3.20]{Wang_thesis_2025} que les seuls corps infinis interprétables sont le corps valué, son corps des constantes, et le corps résiduel.
+	\item Je traite ensuite des exemples spécifiques: classes générales de corps valués henseliens \cite[Théorèmes 3.3.32 et 3.3.33]{Wang_thesis_2025} recouvrant les exemples déjà connus dans la littérature, et corps valués différentiellement clos\footnote{Ce sont les corps de caractéristique nulle munis d'une valuation et d'une dérivation qui "n'interagissent pas": toutes les configurations permises par l'algèbre sont réalisées, en particulier les équations différentielles algébriques non triviales ont des ensembles de solutions denses pour la topologie de la valuation.}. Pour ces derniers, je démontre \cite[Théorème 3.3.20]{Wang_thesis_2025} que les seuls corps infinis interprétables sont le corps valué, son corps des constantes, et le corps résiduel.
 
 \end{itemize}
 
@@ -180,6 +180,17 @@ Etant donnée une théorie de corps (en logique du premier ordre) $T$:
 
 
 \section{Contribution incluse dans la thèse: On groups and fields definable in D-henselian fields}
+
+Dans les corps valués différentiellement clos, la dérivation a un comportement générique par rapport à la valuation : toutes les équations différentielles non triviales possèdent des ensembles denses de solutions. Bien que cette hypothèse facilite l'étude par des méthodes de théorie des modèles, on peut vouloir considérer des corps valués différentiels où la dérivation est continue pour la topologie de la valuation, comportement plus satisfaisant d'un point de vue géométrique. Comme montré dans \cite{Sca-DValF}, il existe toute une famille de théories complètes du premier ordre intéressantes pour les corps valués différentiels d'équicaractéristique $0$, avec des dérivations $1$-Lipschitz ; ces corps sont parfois appelés $D$-Henséliens. Je me suis concentré sur le cas le plus générique, à savoir celui où le corps résiduel, avec dérivation induite, est un corps différentiellement clos; je note cette théorie $VDF$. Des exemples de structures vérifiant ces axiomes sont donnés par les corps de séries de Hahn $K((t^{\Gamma}))$, où $\Gamma$ est un groupe abélien ordonné divisible, le corps résiduel $K$ est un corps différentiellement clos, et la dérivation est construite à partir de celle de $K$ en dérivant terme à terme les coefficients. 
+
+\subsection{Travaux précédents}
+\begin{itemize}
+	\item Dans \cite{Sca-DValF}, Scanlon donne une axiomatisation de $VDF$, montre qu'elle est complète, et prouve un résultat d'élimination des quantificateurs, i.e. donne une description de la structure des ensembles définissables.
+	\item Dans \cite{Rid-VDF}, Rideau-Kikuchi démontre des résultats plus fins: description (en un certain sens) des imaginaires, i.e. des quotients d'ensembles définissables par relations d'équivalence définissables, densité des types définissables\footnote{Qui ont de bonnes propriétés, notamment l'existence d'extensions canoniques lorsqu'on fait grossir le corps de base; tout type génériquement stable est définissable.} dans les espaces de types, et métastabilité, qui correspond grosso modo à la présence de nombreux types génériquement stables\footnote{Dont on rappelle qu'ils ont de très bonnes propriétés de régularité, d'un point de vue modèle-théorique.}.
+\end{itemize}
+
+
+\subsection{Questions}
 
 
 \subsection{Contributions}
