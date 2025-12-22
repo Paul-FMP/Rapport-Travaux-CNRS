@@ -183,18 +183,40 @@ Etant donnée une théorie de corps (en logique du premier ordre) $T$:
 
 Dans les corps valués différentiellement clos, la dérivation a un comportement générique par rapport à la valuation : toutes les équations différentielles non triviales possèdent des ensembles denses de solutions. Bien que cette hypothèse facilite l'étude par des méthodes de théorie des modèles, on peut vouloir considérer des corps valués différentiels où la dérivation est continue pour la topologie de la valuation, comportement plus satisfaisant d'un point de vue géométrique. Comme montré dans \cite{Sca-DValF}, il existe toute une famille de théories complètes du premier ordre intéressantes pour les corps valués différentiels d'équicaractéristique $0$, avec des dérivations $1$-Lipschitz ; ces corps sont parfois appelés $D$-Henséliens. Je me suis concentré sur le cas le plus générique, à savoir celui où le corps résiduel, avec dérivation induite, est un corps différentiellement clos; je note cette théorie $VDF$. Des exemples de structures vérifiant ces axiomes sont donnés par les corps de séries de Hahn $K((t^{\Gamma}))$, où $\Gamma$ est un groupe abélien ordonné divisible, le corps résiduel $K$ est un corps différentiellement clos, et la dérivation est construite à partir de celle de $K$ en dérivant terme à terme les coefficients. 
 
+
+
+
+
+
 \subsection{Travaux précédents}
 \begin{itemize}
 	\item Dans \cite{Sca-DValF}, Scanlon donne une axiomatisation de $VDF$, montre qu'elle est complète, et prouve un résultat d'élimination des quantificateurs, i.e. donne une description de la structure des ensembles définissables.
 	\item Dans \cite{Rid-VDF}, Rideau-Kikuchi démontre des résultats plus fins: description (en un certain sens) des imaginaires, i.e. des quotients d'ensembles définissables par relations d'équivalence définissables, densité des types définissables\footnote{Qui ont de bonnes propriétés, notamment l'existence d'extensions canoniques lorsqu'on fait grossir le corps de base; tout type génériquement stable est définissable.} dans les espaces de types, et métastabilité, qui correspond grosso modo à la présence de nombreux types génériquement stables\footnote{Dont on rappelle qu'ils ont de très bonnes propriétés de régularité, d'un point de vue modèle-théorique.}.
 \end{itemize}
 
+Concernant les types génériquement stables dans les corps valués algébriquement clos, et la métastabilité, les travaux de Hrushovski et Loeser \cite{HruLoe} montrent la richesse de la notion: ils construisent des analogues modèle-théoriques d'espaces de Berkovitch, dont les points sont des types génériquement stables\footnote{En fait stablement dominés, ce qui est équivalent ici.}, et construisent ensuite des comparaisons avec les espaces de Berkovitch usuels, ce qui leur permet de démontrer des résultats sur ces derniers, notamment l'existence de rétractions par déformation sur des complexes simpliciaux, à un niveau de généralité plus grand que ce qui était connu jusque-là.
+
+
 
 \subsection{Questions}
 
+Les questions que je considère sont les mêmes que pour \cite{Wang_interp_groups_2025}, à savoir: 
+\begin{itemize}
+	\item Que peut-on dire des groupes définissables dans la théorie $VDF$ ? Ceux qui n'utilisent pas d'imaginaires se plongent-ils dans des groups algébriques ?
+	\item Que dire des corps définissables ?
+\end{itemize}
+
+
 
 \subsection{Contributions}
+Dans le dernier chapitre de ma thèse \cite[Chapitre 4]{Wang_thesis_2025}, j'étudie les questions ci-dessus. Un point crucial est que les résultats de la section précédente ne s'appliquent pas pour la théorie $VDF$ : un obstacle majeur est que la clôture algébrique dans $VDF$ est possiblement plus grande que celle induite par la théorie des corps différentiellement clos : en raison de la condition $1$-Lipschitz, certaines équations différentielles ont une solution unique\footnote{Pour des raisons similaires au théorème de point fixe de Picard, et aux résultats d'unicité des solutions d'équations différentielles ordinaires.} ! Un exemple est donné dans \cite[Proposition 3.1]{Rid-VDF}. 
 
+Cependant, une propriété plus faible est vérifiée : tout élément du corps valué qui est algébrique\footnote{Au sens de la théorie des modèles, i.e. qui vérifie une formule ayant un nombre fini de solutions.} sur un ensemble de paramètres est \emph{différentiellement algébrique} sur celui-ci, c'est-à-dire qu'il est de rang fini au sens de $DCF$, la théorie des corps différentiellement clos. Ainsi, en travaillant « à données de rang fini près », j'effectue des constructions similaires à celles qui précèdent. L'idée est de suivre la variante du théorème de configuration des groupes de Hrushovski avec des types réguliers et des poids\footnote{Pour les détails, voir par exemple \cite{Bouscaren1989TheGC}}. Cependant, en raison de difficultés techniques\footnote{À savoir, parce que cette variante implique parfois de prendre des extensions déviantes des types en jeu.}, j'utilise une hypothèse supplémentaire sur le générique du groupe : je demande qu'il soit génériquement stable et \emph{orthogonal à tous les types de rang fini}\footnote{Ceci correspond à la \emph{stabilité par changement de base le long d'extensions} (de corps valués différentiels) \emph{différentiellement algébriques}. L'exemple typique est le point/type générique de l'anneau de valuation, dont l'image dans le corps résiduel est le point/type différentiellement transcendant.}. Ainsi, je démontre les résultats suivants :
+
+\begin{itemize}
+	\item Si $G$ est un groupe définissable, vivant dans le corps valué, qui admet un point/type générique génériquement stable orthogonal à tous les types de rang fini, alors il admet un morphisme définissable\footnote{Défini au moins sur sa composante connexe.} vers un groupe algébrique, dont le noyau est de rang fini. Voir \cite[Theorem 4.1.32]{Wang_thesis_2025}
+	\item Si $F$ est un corps définissable, vivant dans le corps valué, qui possède un sous-anneau définissable $R$ de même degré de transcendance différentiel non nul, où $R$ admet un générique, additif et multiplicatif, génériquement stable et orthogonal aux types de rang fini, alors $F$ est définissablement isomorphe au corps valué différentiel ambiant. Voir \cite[Theorem 4.1.37]{Wang_thesis_2025}
+\end{itemize}
 
 
 
