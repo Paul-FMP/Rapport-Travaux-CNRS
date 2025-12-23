@@ -35,7 +35,7 @@
 	
 	  \tableofcontents
 
-\section{Contexte: Théorie géométrique des modèles}
+\part{Théorie géométrique des modèles}
 
 La théorie des modèles (du premier ordre) vise à étudier des structures et théories (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. Si la complexité combinatoire des ensembles définissables est faible, la théorie est considérée comme modérée. Par exemple, les \emph{théories stables}, définies dans \cite{Shelah-Thesis}, et étudiées plus en détail dans \cite{She-NIP}, sont celles où l'on ne peut définir d'ordre total infini.
 
@@ -46,14 +46,25 @@ En logique classique, les ensembles définissables forment des algèbres de Bool
 Un principe général, la \emph{trichotomie de Zilber}, affirme que le comportement d'une théorie modérée dépend du type de structures algébriques définissables\footnote{C'est-à-dire, dont l'ensemble sous-jacent et les opérations sont définissables.} qui y apparaissent: ou bien aucun groupe infini définissable, ou bien des groupes abéliens infinis définissables mais pas de corps infini définissable, ou bien des corps infinis définissables. Ces idées ont été formalisées dans divers contextes, à l'instar des géométries de Zariski\footnote{Cadre visant à capturer de manière abstraite le comportement géométrique des courbes algébriques.} \cite{hru-zilber-zariski} ou des théories o-minimales\footnote{Point de vue, modèle-théorique à l'origine, sur la géométrie et l'analyse réelles, consistant à restreindre les classes de fonctions et d'ensembles afin d'exclure les comportements pathologiques.} \cite{omin-trichotomy}. Une question connexe, au coeur de mes travaux, est celle de la \emph{classification des groupes et corps définissables}, ou interprétables\footnote{Un ensemble interprétable est un quotient d'ensemble définissable par une relation d'équivalence définissable.}, dans une structure donnée.
 
 
-\section{Article publié: Extending Hrushovski's groupoid-cover correspondence using simplicial groupoids}
+\section{Revêtements et groupoïdes définissables}
+
+\subsection{Revêtements internes et groupes de liaison}
 
 
 
-\section{Article publié: The group configuration theorem for generically stable types}
+\subsection{Travaux existants}
 
-Le principe du théorème de configuration de groupe est de \emph{détecter la présence d'un groupe définissable} \emph{à partir de données combinatoires}. Ce résultat s'inscrit dans le domaine de la \emph{théorie géométrique des modèles}, mentionnée plus haut, qui étudie les théories du premier ordre à travers les structures algébriques définissables qui y apparaissent. 
 
+\subsection{Contributions}
+
+
+\section{Configurations de groupe génériquement stables}
+
+Le principe du théorème de configuration de groupe est de \emph{détecter la présence d'un groupe définissable} \emph{à partir de données combinatoires}. Ce résultat s'inscrit dans le domaine de la \emph{théorie géométrique des modèles}, dont on rappelle qu'elle consiste à étudier les théories du premier ordre à travers les structures algébriques définissables qui y apparaissent. 
+
+
+
+\subsection{Contexte}
 
 Une configuration de groupe est la donnée de $6$ éléments vérifiant des propriétés d'indépendance et de dépendance bien spécifiques; l'exemple essentiel est le suivant: soit $G$ un groupe définissable dans une théorie stable\footnote{Ceci signifie qu'aucune relation définissable n'induit une relation d'ordre total infini; il s'agit d'une hypothèse forte de modération combinatoire.}, par exemple la théorie des corps algébriquement clos, et soient $g_1$, $g_2$, $g_3$ des éléments \emph{génériques} de $G$, formant une \emph{famille indépendante}\footnote{Par exemple, si $G = \mathrm{GL}_n(\mathbb{C})$, la conjonction de ces deux conditions correspond à demander que les $g_i$ soient en position générale; l'ensemble des triplets de $\mathrm{GL}_n(\mathbb{C})$ ne vérifiant pas cette propriété est négligeable pour la mesure de Lebesgue restreinte à ${\mathrm{GL}_n(\mathbb{C})} \times {\mathrm{GL}_n(\mathbb{C})} \times {\mathrm{GL}_n(\mathbb{C})} $.}. Alors, le diagramme ci-dessous est une configuration de groupe: 
 
@@ -109,7 +120,7 @@ L'énoncé du théorème de configuration de groupe pour les théories stables, 
 Autrement dit, les exemples présentés plus haut sont essentiellement les seuls: dans une théorie stable, tout sextuplet d'éléments vérifiant les propriétés d'indépendance et d'algébricité ci-dessus provient de génériques indépendants d'un groupe définissable. Ce résultat a des conséquences remarquables: par exemple, l'existence de types réguliers localement modulaires implique l'existence de groupes abéliens infinis type-définissables avec des génériques réguliers. En d'autres termes, Hrushovski a utilisé un théorème de configuration de groupe pour \emph{prouver l'existence de groupes avec certaines propriétés}.
 
 
-
+\subsection{Travaux existants}
 La seule variante du théorème de configuration de groupe démontrée, jusque-là, hors du cadre des théories stables, de Ben Yaacov-Tomasic-Wagner \cite{group-config-simple}, repose sur une hypothèse moins forte de \emph{simplicité} de la théorie ambiante, au prix d'une conclusion moins forte également: le groupe obtenu n'est que "presque hyper-définissable".
 
 \subsection{Contributions}
@@ -127,7 +138,7 @@ Pour ce qui est des applications, au vu des résultats obtenus dans des contexte
 
 
 
-\section{Article soumis, inclus dans la thèse: On groups and fields interpretable in $\mathrm{NTP}_2$ fields}
+\section{Groupes et corps interprétables dans des théories de corps}
 
 Dans \cite{Wang_interp_groups_2025}, j'étudie la structure des groupes et des corps définissables/interprétables, à la fois dans des cadres abstraits et pour des exemples explicites de théories du premier ordre. 
 
@@ -144,7 +155,7 @@ Etant donnée une théorie de corps (en logique du premier ordre) $T$:
 \subsection{Travaux existants}
 \begin{itemize}
 	\item Le premier résultat, dû à Hrushovski, inspiré par les idées de \textcite{Wei-GpCh}, affirme que tout groupe définissable\footnote{En fait, "définissable" et "interprétable" sont équivalents dans les corps algébriquement clos: on dit que ceux-ci \emph{éliminent les imaginaires}.} dans un corps algébriquement clos pur est définissablement isomorphe à un groupe algébrique (en coordonnées). Cela utilise un théorème de "\emph{group chunk}", qui est une manière de reconstruire un groupe définissable à partir de données génériques, similaire au théorème de configuration de groupe.
-	\item Le résultat de Hrushovski a été utilisé dans \cite{Poi-GenNS}, pour montrer que tout corps définissable dans un corps algébriquement clos pur est définissablement isomorphe à celui-ci. S'appuyant également sur ces idées, il a été prouvé dans \cite[Proposition 2.5]{Pil-OMinGp}, que tout groupe définissable dans une structure o-minimale est naturellement un groupe topologique, que tout corps définissable dans ce contexte est soit réel clos, soit algébriquement clos, et que, dans le cas du corps pur des nombres réels, les groupes définissables sont des groupes de Lie. Ces résultats ont ensuite été étendus dans \cite[Theorems A and C]{HruPil-GpPFF}, pour montrer que tout groupe de Nash sur un corps réel ou p-adique est localement isomorphe à l'ensemble des points d'un groupe algébrique, et que tout groupe définissable dans un corps pseudo-fini\footnote{C'est-à-dire un corps infini vérifiant toutes les propriétés du premier ordre communes aux corps finis.} est virtuellement isogène à l'ensemble des points rationnels d'un groupe algébrique. En ce qui concerne les corps différentiellement clos\footnote{Qui sont les corps de caractéristique nulle munis d'une dérivation, et pour lesquels les équations différentielles algébriques ont "suffisamment de solutions".}, Pillay \textcite[Corollary 4.2]{Pillay1997SomeFQ} a prouvé que tout groupe définissable connexe se plonge dans un groupe algébrique, et Suer \textcite[Theorem 3.36]{Suer2007ModelTO} a montré que les seuls corps définissables infinis, à isomorphisme définissable près, sont le corps différentiel et le corps des constantes.
+	\item Le résultat de Hrushovski a été utilisé par Poizat \cite{Poi-GenNS}, pour montrer que tout corps définissable dans un corps algébriquement clos pur est définissablement isomorphe à celui-ci. S'appuyant également sur ces idées, il a été prouvé dans \cite[Proposition 2.5]{Pil-OMinGp}, que tout groupe définissable dans une structure o-minimale est naturellement un groupe topologique, que tout corps définissable dans ce contexte est soit réel clos, soit algébriquement clos, et que, dans le cas du corps pur des nombres réels, les groupes définissables sont des groupes de Lie. Ces résultats ont ensuite été étendus dans \cite[Theorems A and C]{HruPil-GpPFF}, pour montrer que tout groupe de Nash sur un corps réel ou p-adique est localement isomorphe à l'ensemble des points d'un groupe algébrique, et que tout groupe définissable dans un corps pseudo-fini\footnote{C'est-à-dire un corps infini vérifiant toutes les propriétés du premier ordre communes aux corps finis.} est virtuellement isogène à l'ensemble des points rationnels d'un groupe algébrique. En ce qui concerne les corps différentiellement clos\footnote{Qui sont les corps de caractéristique nulle munis d'une dérivation, et pour lesquels les équations différentielles algébriques ont "suffisamment de solutions".}, Pillay \textcite[Corollary 4.2]{Pillay1997SomeFQ} a prouvé que tout groupe définissable connexe se plonge dans un groupe algébrique, et Suer \textcite[Theorem 3.36]{Suer2007ModelTO} a montré que les seuls corps définissables infinis, à isomorphisme définissable près, sont le corps différentiel et le corps des constantes.
 	
 	\item Le théorème le plus général jusqu'ici est \cite[Theorem 2.19]{Stabilizers-NTP2}. Rappelons qu'un groupe discret est \emph{moyennable} s'il existe une mesure de probabilité finiment additive, invariante à gauche, définie sur tous les sous-ensembles. Alors, un groupe définissable, dans une certaine théorie, est dit \emph{définissablement moyennable} s'il admet une mesure de probabilité finiment additive, invariante à gauche, définie sur les ensembles définissables. Le théorème 2.19 de Montenegro, Onshuus et Simon traite des groupes définissablement moyennables dans toutes les théories de corps parfaits ayant des propriétés modèles-théoriques raisonnables\footnote{En l'occurrence, qui sont $\mathrm{NTP_2}$ et où les clôtures algébriques au sens de la théorie des modèles et au sens des corps coïncident.}. 
 	
@@ -182,7 +193,7 @@ Ces résultats englobent dans un cadre général la grande majorité des exemple
 
 
 
-\section{Contribution incluse dans la thèse: On groups and fields definable in D-henselian fields}
+\section{Corps valués D-henseliens et types génériquement stables}
 
 Dans les corps valués différentiellement clos, la dérivation a un comportement générique par rapport à la valuation : toutes les équations différentielles non triviales possèdent des ensembles denses de solutions. Bien que cette hypothèse facilite l'étude par des méthodes de théorie des modèles, on peut vouloir considérer des corps valués différentiels où la dérivation est continue pour la topologie de la valuation, comportement plus satisfaisant d'un point de vue géométrique. Comme montré dans \cite{Sca-DValF}, il existe toute une famille de théories complètes du premier ordre intéressantes pour les corps valués différentiels d'équicaractéristique $0$, avec des dérivations $1$-Lipschitz ; ces corps sont parfois appelés $D$-Henséliens. Je me suis concentré sur le cas le plus générique, à savoir celui où le corps résiduel, avec dérivation induite, est un corps différentiellement clos; je note cette théorie $VDF$. Des exemples de structures vérifiant ces axiomes sont donnés par les corps de séries de Hahn $K((t^{\Gamma}))$, où $\Gamma$ est un groupe abélien ordonné divisible, le corps résiduel $K$ est un corps différentiellement clos, et la dérivation est construite à partir de celle de $K$ en dérivant terme à terme les coefficients. 
 
@@ -191,7 +202,7 @@ Dans les corps valués différentiellement clos, la dérivation a un comportemen
 
 
 
-\subsection{Travaux précédents}
+\subsection{Travaux existants}
 \begin{itemize}
 	\item Dans \cite{Sca-DValF}, Scanlon donne une axiomatisation de $VDF$, montre qu'elle est complète, et prouve un résultat d'élimination des quantificateurs, i.e. donne une description de la structure des ensembles définissables.
 	\item Dans \cite{Rid-VDF}, Rideau-Kikuchi démontre des résultats plus fins: description (en un certain sens) des imaginaires, i.e. des quotients d'ensembles définissables par relations d'équivalence définissables, densité des types définissables\footnote{Qui ont de bonnes propriétés, notamment l'existence d'extensions canoniques lorsqu'on fait grossir le corps de base; tout type génériquement stable est définissable.} dans les espaces de types, et métastabilité, qui correspond grosso modo à la présence de nombreux types génériquement stables\footnote{Dont on rappelle qu'ils ont de très bonnes propriétés de régularité, d'un point de vue modèle-théorique.}.
@@ -229,10 +240,11 @@ Cependant, une propriété plus faible est vérifiée : tout élément du corps 
 Une autre classe de structures intéressantes où ces idées pourraient s'adapter est celle des corps valués avec automorphismes\footnote{Dont on demande qu'ils soient des isométries \cite{AzgvdD}, ou bien qu'ils soient contractants \cite{Dor_Halevi_w_Kaplan_2025}, pour la valuation.}, où, de même que pour $VDF$, certaines équations faisant intervenir l'automorphisme ont une unique solution.
 
 
-\section{Article soumis: Residually Dominated Groups in Henselian Valued
-Fields of Equicharacteristic Zero, avec Dicle Mutlu}
+\section{Domination résiduelle dans les corps valués henseliens}
 
 La notion de \emph{domination stable}, brièvement mentionnée plus haut, a été introduite par Haskell, Hrushovski et Macpherson dans \cite{hhm}, pour les corps valués algébriquement clos. On dit\footnote{A certains détails techniques près, que nous ignorerons ici.} qu'un type est \emph{stablement dominé} si \emph{le comportement de ses extensions génériques est contrôlé par ce qu'elles induisent sur le corps résiduel}. L'exemple canonique, pour les corps valués algébriquement clos, est celui d'une \emph{extension monogène purement résiduelle d'un corps sphériquement complet}\footnote{Il s'agit d'un analogue fort de la complétude dans le cadre général des corps valués ultramétriques, où l'on demande que toute chaîne de boules a un point d'accumulation; cette notion est pertinente lorsque la valuation n'est pas discrète.}. La notion a ensuite été généralisée à celle de \emph{domination résiduelle}, dans des contextes divers \cite{EHM19} \cite{ResDom2} \cite{Vic22} \cite{KRV24}.
+
+\subsection{Travaux existants}
 
 
 \subsection{Résultats principaux de l'article}
@@ -266,19 +278,20 @@ Pour cet article, une bonne partie des idées ont été le résultat d'interacti
 
 
 
-\section{Prépublication: Nondeterministic behaviors in double categorical systems theory}
+\part{Théorie catégorique des systèmes}
 
 La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ce projet de recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques}, possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, ce travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre; il repose également sur la théorie synthétique des probabilités. Il me semble utile de commencer par rappeler en quoi consistent les points de vue "monoidal symétrique" et "coalgébrique", ainsi que la théorie synthétique des probabilités, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes, et mes contributions.
 
+\section{Point de vue doublement catégorique}
 
-\subsection{Contexte: Approche monoidale symétrique}\label{subs_smc}
+\subsection{Approche monoidale symétrique}\label{subs_smc}
 Une catégorie monoidale symétrique est une structure contenant des objets, des morphismes entre ces objets, une opération de produit sur les objets (muni de symétries canoniques), et des opérations de composition séquentielle et parallèle sur les morphismes, vérifiant des propriétés algébriques raisonnables (associativité, etc.). L'intérêt pour la représentation de systèmes dynamiques est le suivant: si l'on peut représenter les espaces d'entrées ou de sorties possibles comme des objets,  les systèmes comme des morphismes, et que l'on dispose effectivement d'opérations de compositions parallèle et séquentielle de systèmes, alors \emph{la théorie des catégories monoidales symétriques fournit automatiquement une syntaxe et des outils de raisonnement}. Les plus emblématiques sont les \emph{diagrammes de cordes}\footnote{Appelés \emph{string diagrams} en anglais; voir par exemple la page du nLab sur le sujet: \url{ncatlab.org/nlab/show/string+diagram}.}, qui permettent des calculs rigoureux fondés sur des manipulations graphiques des diagrammes. 
 
 
 Une des applications les plus marquantes est le \emph{ZX-calculus} \cite{Danos_Kashefi_Panangaden_2007}, utilisé pour représenter des calculs quantiques à base de qbits, dont les vertus pédagogiques, découlant vraisemblablement de l'approche graphique et de la relative simplicité du langage, ont été testées expérimentalement \cite{Coecke_Kissinger_Gogioso_Dündar-Coecke_Puca_Yeh_Waseem_Pothos_Pfaendler_Wang-Mascianica_et_al._2025}. 
 
 
-\subsection{Contexte: point de vue coalgébrique}\label{subs_coalg}
+\subsection{Point de vue coalgébrique}\label{subs_coalg}
 Pour illustrer le point de vue coalgébrique sur les systèmes, utilisons l'exemple des machines de Moore\footnote{notion qui généralise celle d'automate fini déterministe}. 
 
 \begin{mdframed}{\textbf{Machines de Moore comme coalgèbres}}
@@ -299,7 +312,7 @@ Partant de ce principe, l'on peut ensuite définir\footnote{Il s'agit davantage 
 %Le point de vue coalgébrique a donné lieu à un certain nombre de développements, notamment au niveau logique \cite{Kurz} \cite{Gallardo_Viglizzo_2024}; l'un des objectifs à moyen terme de mon  programme de recherche est d'adapter, si cela s'avère possible, ces travaux au cadre doublement catégorique.
 
 
-\subsection{Contexte: Théorie synthétique des probabilités et du nondéterminisme, catégories de Markov}\label{subs_th_synth_proba}
+\subsection{Théorie synthétique des probabilités et du nondéterminisme, catégories de Markov}\label{subs_th_synth_proba}
 
 Avant de présenter la théorie doublement catégorique des systèmes, je souhaite m'attarder sur un élément important au niveau "monoidal symétrique", à savoir la \emph{théorie synthétique des probabilités}, fondée sur la notion de catégorie de Markov \cite[Definition 2.1]{FRITZ-MarkovCats}. L'idée est d'axiomatiser le comportement des \emph{noyaux de Markov} entre espaces mesurables, qui à chaque élément de la source associent une mesure de probabilité sur l'espace d'arrivée, qui "varie de manière mesurable" (voir \cite[Section 1]{Perrone2022MarkovCA} et \cite{Giry_1982}). Comme les noyaux de Markov sont munis d'opération de compositions parallèle et séquentielle, \emph{le cadre monoidal symétrique est pertinent}. Cependant, de la structure additionnelle existe, en l'occurrence, pour tout espace mesurable $X$, l'unique noyau de Markov $del_X$, de $X$ vers l'espace singleton, ainsi que la fonction mesurable diagonale $copy_X: X \rightarrow X \times X$. Abstrayant à partir de cet exemple:
 
@@ -317,7 +330,7 @@ Un point important, comme expliqué par Tobias Fritz dans l'introduction de \cit
 univers dans lesquels elles interagissent en tant qu'objets, appelés infini-cosmos\footnote{Ce point de vue permet un traitement \emph{indépendant du modèle combinatoire} choisi pour définir ce qu'est une infini-catégorie, ce qui a son importance étant donné la pluralité des modèles existants.}. 
 
 
-\subsection{Contexte: Théorie doublement catégorique des systèmes}
+\subsection{Théorie doublement catégorique des systèmes}
 Comme mentionné plus haut, la théorie doublement catégorique des systèmes vise à combiner un point de vue sur la \emph{composition} de systèmes et des notions de \emph{comparaisons}, ou \emph{simulations généralisées} entre systèmes. L'un des objectifs est de donner des principes et méthodes, étayés par la théorie, pour la \emph{modélisation collaborative}; les projets les plus saillants dans ce domaine sont ModelCollab \cite{UofS-CEPHIL/modelcollab_2025}  et CatColab \cite{Carlson_2024}.
 
 Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}\footnote{Voir \url{ncatlab.org/nlab/show/double+category} ou \cite[Introduction]{Dawson_Pare_1993} pour plus de détails}. 
@@ -364,7 +377,10 @@ Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}
 
 \subsection{Travaux existants}
 \begin{itemize}
-	\item Dans \cite{Baez_Courser_2018}, une catégorie double est construite, où une direction encode des processus de Markov ouverts, donc des systèmes probabilistes, et l'autre des fonctions de \emph{coarse-graining}. La principale restriction est que ces fonctions sont déterministes.
+	\item Dans \cite{Baez_Courser_2018}, une catégorie (monoidale symétrique) double est construite, où une direction encode des processus de Markov ouverts, donc des systèmes probabilistes, et l'autre des fonctions de \emph{coarse-graining}. La principale restriction est que ces fonctions sont déterministes. Un autre point est la focalisation sur les compositions séquentielle et parallèle, aux dépens des schémas de composition plus généraux.
+	
+    \item 
+
 	\item Dans \cite{DCST-book} et \cite{Libkind_Myers_2025}, les constructions utilisent la notion de \emph{monade commutative} pour le nondéterminisme; elles donnent bien des catégories doubles, mais la notion de simulation généralisée est trop restrictive, comme expliqué dans \cite[Fin de la section 3.5]{DCST-book}.
 
 \end{itemize}
