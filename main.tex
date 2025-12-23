@@ -127,7 +127,7 @@ Pour ce qui est des applications, au vu des résultats obtenus dans des contexte
 
 
 
-\section{Article soumis: On groups and fields interpretable in $\mathrm{NTP}_2$ fields}
+\section{Article soumis, inclus dans la thèse: On groups and fields interpretable in $\mathrm{NTP}_2$ fields}
 
 Dans \cite{Wang_interp_groups_2025}, j'étudie la structure des groupes et des corps définissables/interprétables, à la fois dans des cadres abstraits et pour des exemples explicites de théories du premier ordre. 
 
@@ -163,7 +163,7 @@ Etant donnée une théorie de corps (en logique du premier ordre) $T$:
 	
 	Une notion clé est celle d'un ensemble définissable \(X\) qui \emph{ne voit pas} un autre ensemble définissable \(Y\) : cela signifie essentiellement que toutes les fonctions définissables \(X \rightarrow Y\) ont une image finie. Le résultat est alors le suivant: \emph{tout groupe définissablement moyennable dans la théorie NIP admet un morphisme de groupes définissable vers un groupe de la théorie superstable, dont le noyau ne voit pas les ensembles définissables de la théorie superstable.}
 	
-	\item Ensuite, en appliquant ce théorème abstrait pour $T_0$ la théorie des corps algébriquement clos, j'obtiens un résultat très général \cite[Théorème 3.2.2]{Wang_thesis_2025}  pour des théories de corps \emph{algébriquement bornés}\footnote{C'est-à-dire où les clôtures algébriques au sens de la théorie des modèles et de la théorie des corps coïncident.}, et je peux couvrir plus de cas que \cite[Theorem 2.19]{Stabilizers-NTP2} : sous des hypothèses modérées, \emph{tous les groupes interprétables définissablement moyennables admettent un morphisme définissable vers un groupe algébrique sur le corps ambiant, dont le noyau ne voit pas le corps.} Autrement dit, ces groupes interprétables définissablement moyennables admettent des suites exactes courtes, où le terme de droite est un sous-groupe d'un groupe algébrique, et le terme de gauche ne voit pas le corps.
+	\item Ensuite, en appliquant ce théorème abstrait pour $T_0$ la théorie des corps algébriquement clos, j'obtiens un résultat très général \cite[Théorème 3.2.2]{Wang_thesis_2025}  pour des théories de corps \emph{algébriquement bornés}\footnote{C'est-à-dire où les clôtures algébriques au sens de la théorie des modèles et de la théorie des corps coïncident.}, et je peux couvrir plus de cas que \cite[Theorem 2.19]{Stabilizers-NTP2} : sous des hypothèses modérées, \emph{tous les groupes \emph{interprétables}\footnote{Le theorème \cite[Theorem 2.19]{Stabilizers-NTP2} ne traite que les cas des groupes \emph{définissables} et noyaux finis.} définissablement moyennables admettent un morphisme définissable vers un groupe algébrique sur le corps ambiant, dont le noyau ne voit pas le corps.} Autrement dit, ces groupes interprétables définissablement moyennables admettent des suites exactes courtes, où le terme de droite est un sous-groupe d'un groupe algébrique, et le terme de gauche ne voit pas le corps.
 	\item De même, en prenant pour $T_0$ la théorie des corps différentiellement clos, je démontre des résultats analogues \cite[Théorème 3.3.2]{Wang_thesis_2025} pour les groupes interprétables dans les théories de corps différentiels algébriquement bornés\footnote{L'analogue des théories de corps algébriquement bornés prenant en compte la présence de la dérivation.}.
 	\item Pour ce qui est des corps interprétables, je démontre \cite[Corollaire 3.2.19]{Wang_thesis_2025}, sous hypothèses modérées, la dichotomie suivante: \emph{un corps interprétable infini admet un plongement définissable dans une extension finie du corps ambiant, ou bien ne voit pas ce dernier, auquel cas on le qualifie de \emph{purement imaginaire\footnote{Ce qui est en général le cas pour le corps résiduel d'un corps valué henselien, par exemple.}}}. 
 	
@@ -172,6 +172,9 @@ Etant donnée une théorie de corps (en logique du premier ordre) $T$:
 
 \end{itemize}
 
+
+
+Ces résultats englobent dans un cadre général la grande majorité des exemples étudiés précédemment dans la littérature, et des preuves également; le fait qu'ils portent sur les groupes \emph{interprétables} permet des applications à l'étude des imaginaires, i.e. des quotients définissables. Par ailleurs, les théorèmes les plus abstraits \cite[Théorème 3.1.47]{Wang_thesis_2025} \cite[Théorème 3.1.30]{Wang_thesis_2025} peuvent s'appliquer à des cadres autres que des théories de corps.
 
 %\section{Contribution incluse dans la thèse: Classification des anneaux définissables dans les corps algébriquement clos}
 
@@ -214,17 +217,48 @@ Dans le dernier chapitre de ma thèse \cite[Chapitre 4]{Wang_thesis_2025}, j'ét
 Cependant, une propriété plus faible est vérifiée : tout élément du corps valué qui est algébrique\footnote{Au sens de la théorie des modèles, i.e. qui vérifie une formule ayant un nombre fini de solutions.} sur un ensemble de paramètres est \emph{différentiellement algébrique} sur celui-ci, c'est-à-dire qu'il est de rang fini au sens de $DCF$, la théorie des corps différentiellement clos. Ainsi, en travaillant « à données de rang fini près », j'effectue des constructions similaires à celles qui précèdent. L'idée est de suivre la variante du théorème de configuration des groupes de Hrushovski avec des types réguliers et des poids\footnote{Pour les détails, voir par exemple \cite{Bouscaren1989TheGC}}. Cependant, en raison de difficultés techniques\footnote{À savoir, parce que cette variante implique parfois de prendre des extensions déviantes des types en jeu.}, j'utilise une hypothèse supplémentaire sur le générique du groupe : je demande qu'il soit génériquement stable et \emph{orthogonal à tous les types de rang fini}\footnote{Ceci correspond à la \emph{stabilité par changement de base le long d'extensions} (de corps valués différentiels) \emph{différentiellement algébriques}. L'exemple typique est le point/type générique de l'anneau de valuation, dont l'image dans le corps résiduel est le point/type différentiellement transcendant.}. Ainsi, je démontre les résultats suivants :
 
 \begin{itemize}
-	\item Si $G$ est un groupe définissable, vivant dans le corps valué, qui admet un point/type générique génériquement stable orthogonal à tous les types de rang fini, alors il admet un morphisme définissable\footnote{Défini au moins sur sa composante connexe.} vers un groupe algébrique, dont le noyau est de rang fini. Voir \cite[Theorem 4.1.32]{Wang_thesis_2025}
-	\item Si $F$ est un corps définissable, vivant dans le corps valué, qui possède un sous-anneau définissable $R$ de même degré de transcendance différentiel non nul, où $R$ admet un générique, additif et multiplicatif, génériquement stable et orthogonal aux types de rang fini, alors $F$ est définissablement isomorphe au corps valué différentiel ambiant. Voir \cite[Theorem 4.1.37]{Wang_thesis_2025}
+	\item Si $G$ est un groupe définissable, vivant dans le corps valué, qui admet un point/type générique génériquement stable orthogonal à tous les types de rang fini, alors il admet un morphisme définissable\footnote{Défini au moins sur sa composante connexe.} vers un groupe algébrique, dont le noyau est de rang fini. Voir \cite[Theorem 4.1.32]{Wang_thesis_2025}.
+	\item Si $F$ est un corps définissable, vivant dans le corps valué, qui possède un sous-anneau définissable $R$ de même degré de transcendance différentiel non nul, où $R$ admet un générique, additif et multiplicatif, génériquement stable et orthogonal aux types de rang fini, alors $F$ est définissablement isomorphe au corps valué différentiel ambiant. Voir \cite[Theorem 4.1.37]{Wang_thesis_2025}.
 \end{itemize}
 
 
+
+\emph{Ces résultats sont, à ma connaissance, les premiers obtenus dans un cadre où les hypothèses usuelles sur la clôture algébrique ne sont pas vérifiées}; il s'agit donc d'un premier pas vers une étude plus fine des structures de ce genre. Par exemple, bien que les preuves n'utilisent pas à proprement parler la métastabilité de la théorie $VDF$, les bonnes propriétés des types génériquement stables sont cruciales, ce qui confirme, si besoin était, l'importance de ces derniers. 
+
+
+Une autre classe de structures intéressantes où ces idées pourraient s'adapter est celle des corps valués avec automorphismes\footnote{Dont on demande qu'ils soient des isométries \cite{AzgvdD}, ou bien qu'ils soient contractants \cite{Dor_Halevi_w_Kaplan_2025}, pour la valuation.}, où, de même que pour $VDF$, certaines équations faisant intervenir l'automorphisme ont une unique solution.
 
 
 \section{Article soumis: Residually Dominated Groups in Henselian Valued
 Fields of Equicharacteristic Zero, avec Dicle Mutlu}
 
+La notion de \emph{domination stable}, brièvement mentionnée plus haut, a été introduite par Haskell, Hrushovski et Macpherson dans \cite{hhm}, pour les corps valués algébriquement clos. On dit\footnote{A certains détails techniques près, que nous ignorerons ici.} qu'un type est \emph{stablement dominé} si \emph{le comportement de ses extensions génériques est contrôlé par ce qu'elles induisent sur le corps résiduel}. L'exemple canonique, pour les corps valués algébriquement clos, est celui d'une \emph{extension monogène purement résiduelle d'un corps sphériquement complet}\footnote{Il s'agit d'un analogue fort de la complétude dans le cadre général des corps valués ultramétriques, où l'on demande que toute chaîne de boules a un point d'accumulation; cette notion est pertinente lorsque la valuation n'est pas discrète.}. La notion a ensuite été généralisée à celle de \emph{domination résiduelle}, dans des contextes divers \cite{EHM19} \cite{ResDom2} \cite{Vic22} \cite{KRV24}.
+
+
+\subsection{Résultats principaux de l'article}
+Dans \cite{Mutlu_Wang_arxiv_2025}, nous démontrons les résultats suivants pour les corps valués henseliens d'équicaractéristique nulle:
+
+\begin{itemize}
+	\item La domination résiduelle, pour les extensions régulières de type fini, est caractérisée par la propriété de la base séparée et l'absence de ramification. Voir \cite[Corollary ???]{Mutlu_Wang_arxiv_2025}.
+	\item La domination résiduelle au sens du corps valué henselien ambiant équivaut à la domination stable au sens de sa clôture algébrique\footnote{Munie de l'unique valuation étendant la sienne, par henselianité.}, c'est-à-dire au sens de la théorie des corps valués algébriquement clos. Voir \cite[???]{Mutlu_Wang_arxiv_2025}.
+	\item Supposons que la théorie considérée est $\mathrm{NTP}_2$ (il s'agit d'une notion de modération assez faible, couvrant un grand nombre d'exemples). Si $G$ est un groupe définissable, vivant dans le corps valué, possédant un générique résiduellement dominé, alors il existe un groupe algébrique sur le corps résiduel $\mathfrak{g}$ et un morphisme de groupes définissable surjectif $f$ de\footnote{la composante connexe de} $G$ vers $\mathfrak{g}$, tel que tous les génériques de\footnote{la composante connexe de} $G$ sont dominés par $f$. En particulier, tous les génériques de $G$ sont résiduellement dominés. Voir ???
+	\item Supposons maintenant que la théorie considérée est NIP\footnote{Notion plus restrictive que $\mathrm{NTP}_2$, mais encore assez large.}, et soit $G$ un groupe définissable ayant un générique résiduellement dominé, comme précédemment. Alors, il existe un groupe $G_1$, définissable et stablement dominé au sens des corps valués algébriquement clos, et un morphisme de groupes définissables $\iota$, de noyau fini, allant de\footnote{la composante connexe de} $G$ dans $G_1$, tel que l'image de tout générique de\footnote{la composante connexe de} $G$ est générique dans $G_1$ au sens des corps valués algébriquement clos.
+	
+	De plus, le groupe $G_1$ et le morphisme $\iota$ sont essentiellement universels, et essentiellement fonctoriels vis-à-vis des morphismes surjectifs de groupes définissables. Voir ???
+\end{itemize}
+
+
+
 \subsection{Contributions personnelles}
+
+Pour cet article, une bonne partie des idées ont été le résultat d'interactions avec ma co-auteure Dicle Mutlu; les contributions que l'on peut m'attribuer sont les suivantes:
+
+\begin{itemize}
+    \item En exploitant les propriétés fines de la généricité dans le cadre $\mathrm{NTP}_2$, je démontre que tout générique d'un groupe ayant \emph{un} générique résiduellement dominé est lui-même résiduellement dominé.
+
+	\item J'utilise le théorème du stabilisateur \cite[Theorem 2.15]{Stabilizers-NTP2} pour construire des morphismes de groupes définissables à partir de données génériques, ce qui me permet de démontrer l'universalité et la fonctorialité des constructions de ???
+	
+\end{itemize}
 
 
 
