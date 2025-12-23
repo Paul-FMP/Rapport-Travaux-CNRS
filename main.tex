@@ -37,16 +37,23 @@
 
 \part{Théorie géométrique des modèles}
 
-La théorie des modèles (du premier ordre) vise à étudier des structures et théories (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. Si la complexité combinatoire des ensembles définissables est faible, la théorie est considérée comme modérée. Par exemple, les \emph{théories stables}, définies dans \cite{Shelah-Thesis}, et étudiées plus en détail dans \cite{She-NIP}, sont celles où l'on ne peut définir d'ordre total infini.
+La théorie des modèles (du premier ordre) vise à étudier des structures et théories\footnote{Pour cette partie, une théorie du premier ordre est une classe de structures du premier ordre définie par une collection d'axiomes du premier ordre.} (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. En logique classique, les ensembles définissables forment des algèbres de Boole (intersection, complémentaire, union); par dualité de Stone, l'on peut donc s'intéresser aux espaces topologiques profinis\footnote{C'est-à-dire compacts et dont les ouverts sont unions d'ouverts-fermés.} associés. Ces espaces sont appelés \emph{espaces de types}, et donnent un point de vue plus "géométrique" pour l'étude des ensembles définissables\footnote{De même que l'étude des schémas affines peut être considérée comme plus "géométrique" que l'étude des anneaux commutatifs; en fait, \emph{les espaces profinis sont des schémas affines} où le faisceau d'anneaux peut être intégralement reconstruit à partir de la topologie, via les ouverts-fermés.}.
 
 
-En logique classique, les ensembles définissables forment des algèbres de Boole (intersection, complémentaire, union); par dualité de Stone, l'on peut donc s'intéresser aux espaces topologiques profinis\footnote{C'est-à-dire compacts et dont les ouverts sont unions d'ouverts-fermés.} associés. Ces espaces sont appelés \emph{espaces de types}, et donnent un point de vue plus "géométrique" pour l'étude des ensembles définissables\footnote{De même que l'étude des schémas affines peut être considérée comme plus "géométrique" que l'étude des anneaux commutatifs; en fait, \emph{les espaces profinis sont des schémas affines} où le faisceau d'anneaux peut être intégralement reconstruit à partir de la topologie, via les ouverts-fermés.}.
+Si la complexité combinatoire des ensembles définissables est faible, la théorie est considérée comme modérée. Par exemple, les \emph{théories stables}, définies dans \cite{Shelah-Thesis}, et étudiées plus en détail dans \cite{She-NIP}, sont celles où l'on ne peut définir d'ordre total infini.
+
+
+
 
 
 Un principe général, la \emph{trichotomie de Zilber}, affirme que le comportement d'une théorie modérée dépend du type de structures algébriques définissables\footnote{C'est-à-dire, dont l'ensemble sous-jacent et les opérations sont définissables.} qui y apparaissent: ou bien aucun groupe infini définissable, ou bien des groupes abéliens infinis définissables mais pas de corps infini définissable, ou bien des corps infinis définissables. Ces idées ont été formalisées dans divers contextes, à l'instar des géométries de Zariski\footnote{Cadre visant à capturer de manière abstraite le comportement géométrique des courbes algébriques.} \cite{hru-zilber-zariski} ou des théories o-minimales\footnote{Point de vue, modèle-théorique à l'origine, sur la géométrie et l'analyse réelles, consistant à restreindre les classes de fonctions et d'ensembles afin d'exclure les comportements pathologiques.} \cite{omin-trichotomy}. Une question connexe, au coeur de mes travaux, est celle de la \emph{classification des groupes et corps définissables}, ou interprétables\footnote{Un ensemble interprétable est un quotient d'ensemble définissable par une relation d'équivalence définissable.}, dans une structure donnée.
 
 
 \section{Revêtements et groupoïdes définissables}
+
+
+
+
 
 \subsection{Revêtements internes et groupes de liaison}
 
@@ -97,7 +104,7 @@ Une configuration de groupe est la donnée de $6$ éléments vérifiant des prop
 \end{tikzpicture}
 \end{center}
 
-En effet, les deux propriétés définissant la notion de configuration de groupe \emph{régulière}\footnote{Il existe en effet une définition, et un théorème, pour des \emph{actions de groupe} plus générales qu'une action par translation d'un groupe sur lui-même; par souci de concision, les détails ne seront pas mentionnés.} sont les suivantes:
+En effet, les deux propriétés définissant la notion de configuration de groupe \emph{régulière}\footnote{Il existe en effet une définition, et un théorème, pour des \emph{actions de groupe} plus générales qu'une action par translation d'un groupe sur lui-même; nous l'ignorerons ici, malgré son importance.} sont les suivantes:
 
 \begin{itemize}
 	\item Sur le diagramme, tout triplet de points non alignés forme une famille indépendante\footnote{Toute théorie stable vient avec une notion canonique d'indépendance; une partie de la difficulté technique est de travailler avec des généralisations ayant un sens pour des théories instables.}.
@@ -140,7 +147,7 @@ Pour ce qui est des applications, au vu des résultats obtenus dans des contexte
 
 \section{Groupes et corps interprétables dans des théories de corps}
 
-Dans \cite{Wang_interp_groups_2025}, j'étudie la structure des groupes et des corps définissables/interprétables, à la fois dans des cadres abstraits et pour des exemples explicites de théories du premier ordre. 
+Dans \cite{Wang_interp_groups_2025}, j'étudie la structure des groupes et des corps définissables/interprétables, à la fois dans des cadres abstraits et pour des exemples explicites de théories de corps valués.
 
 
 
@@ -151,6 +158,34 @@ Etant donnée une théorie de corps (en logique du premier ordre) $T$:
 	\item Quid des corps définissables dans $T$ ? Sont-ils réduits aux extensions finies\footnote{Qui sont toujours définissables, en choisissant des bases, au sens de l'algèbre linéaire.} du corps ambiant ?
 	\item Que dire si l'on généralise ces questions au cas des groupes et corps \emph{interprétables}, i.e. si l'on autorise les quotients d'ensembles définissables par relations d'équivalence définissables ?
 \end{itemize}
+
+\subsection{Théories de corps (valués)}
+
+Pour la suite, un corps valué est donné par un corps $K$, un groupe abélien ordonné\footnote{L'on demande que l'ordre soit total, et compatible avec la loi de groupe.} $\Gamma$, que l'on notera multiplicativement ici, et un morphisme de groupes surjectif $|\cdot |: K^{\times} \rightarrow \Gamma$, appelé norme, vérifiant l'inégalité ultramétrique suivante: $|x+y| \leq \max (|x|, |y|)$. Usuellement, la norme est étendue en ajoutant un élément absorbant à $\Gamma$, égal à la norme de l'élément $0$. On appelle $\Gamma$ le groupe de valeurs.
+
+\begin{exemple} Les structures suivantes sont des corps valués:
+	\begin{itemize}
+		\item 	Pour tout nombre premier $p$, et tout réel $r$ tel que $0 < r < 1$, le corps des nombres rationnels $\mathbb{Q}$, muni de la norme $p$-adique $x \mapsto r^{v_p(x)}$, où $v_p(x)$ désigne la valuation $p$-adique de $x$. Le groupe de valeurs est $r^{\mathbb{Z}}$, isomorphe à $\mathbb{Z}$. A isomorphisme près, cette structure ne dépend pas du choix de $r$.
+		\item Pour tout nombre premier $p$, et tout réel $r$ avec $0 < r <1$, le complété de $\mathbb{Q}$ selon la norme $p$-adique, noté $\mathbb{Q}_p$. On l'appelle le corps des nombres $p$-adiques, et, à ismorphisme près, il ne dépend pas du choix de $r$. 
+		\item Pour tout corps $K$, le corps des fractions rationnelles $K(t)$, avec une norme associée à la valuation $t$-adique.
+		\item Pour tout corps $K$, le corps des séries de Laurent $K((t))$, avec une norme $t$-adique, qui est le complété de $K(t)$.
+		\item Pour tout corps $K$ et tout groupe abélien ordonné $\Gamma$, le corps de séries de Hahn $K(X^{\Gamma})$, dont les éléments sont les fonctions de $\Gamma$ dans $K$ à support co-bien ordonné (i.e. bien ordonné pour l'ordre dual de $\Gamma$); la somme est définie terme à terme, et le produit est calculé par convolution.
+
+	\end{itemize}
+
+\end{exemple}
+
+
+
+Dans un corps valué, l'inégalité ultramétrique entraîne que la boule unité fermée $\mathcal{O}= \lbrace x \, : \, |x| \leq 1 \rbrace$ est un anneau local, dont l'idéal maximal $\mathfrak{m}$ est la boule ouverte, $\mathfrak{m}= \lbrace x \, : \, |x| < 1 \rbrace$. Le quotient $\mathcal{O} / \mathfrak{m}$ est appelé \emph{corps résiduel}.
+
+
+\begin{mdframed}{\textbf{Définition:}}
+	Une théorie de corps (valué) est une théorie avec un corps (valué) définissable marqué\footnote{De même qu'un espace topologique pointé est un espace topologique avec un point marqué.}.
+\end{mdframed}
+
+
+Un point important est que le corps (valué) définissable en question peut avoir de la structure additionnelle; l'enjeu est de comprendre comment étudier ces cas sans nécessairement passer par une analyse détaillée de ladite structure additionnelle. 
 
 \subsection{Travaux existants}
 \begin{itemize}
@@ -204,7 +239,7 @@ Dans les corps valués différentiellement clos, la dérivation a un comportemen
 
 \subsection{Travaux existants}
 \begin{itemize}
-	\item Dans \cite{Sca-DValF}, Scanlon donne une axiomatisation de $VDF$, montre qu'elle est complète, et prouve un résultat d'élimination des quantificateurs, i.e. donne une description de la structure des ensembles définissables.
+	\item Dans \cite{Sca-DValF}, Scanlon donne une axiomatisation de $VDF$, montre qu'elle est complète, et prouve un résultat d'élimination des quantificateurs, i.e. donne une description de la structure des ensembles définissables; en fait, il démontre ces résultats pour une classe générale de théories de corps valués avec dérivation $1$-Lipschitz.
 	\item Dans \cite{Rid-VDF}, Rideau-Kikuchi démontre des résultats plus fins: description (en un certain sens) des imaginaires, i.e. des quotients d'ensembles définissables par relations d'équivalence définissables, densité des types définissables\footnote{Qui ont de bonnes propriétés, notamment l'existence d'extensions canoniques lorsqu'on fait grossir le corps de base; tout type génériquement stable est définissable.} dans les espaces de types, et métastabilité, qui correspond grosso modo à la présence de nombreux types génériquement stables\footnote{Dont on rappelle qu'ils ont de très bonnes propriétés de régularité, d'un point de vue modèle-théorique.}.
 \end{itemize}
 
@@ -242,17 +277,44 @@ Une autre classe de structures intéressantes où ces idées pourraient s'adapte
 
 \section{Domination résiduelle dans les corps valués henseliens}
 
-La notion de \emph{domination stable}, brièvement mentionnée plus haut, a été introduite par Haskell, Hrushovski et Macpherson dans \cite{hhm}, pour les corps valués algébriquement clos. On dit\footnote{A certains détails techniques près, que nous ignorerons ici.} qu'un type est \emph{stablement dominé} si \emph{le comportement de ses extensions génériques est contrôlé par ce qu'elles induisent sur le corps résiduel}. L'exemple canonique, pour les corps valués algébriquement clos, est celui d'une \emph{extension monogène purement résiduelle d'un corps sphériquement complet}\footnote{Il s'agit d'un analogue fort de la complétude dans le cadre général des corps valués ultramétriques, où l'on demande que toute chaîne de boules a un point d'accumulation; cette notion est pertinente lorsque la valuation n'est pas discrète.}. La notion a ensuite été généralisée à celle de \emph{domination résiduelle}, dans des contextes divers \cite{EHM19} \cite{ResDom2} \cite{Vic22} \cite{KRV24}.
+La notion de \emph{domination stable}, brièvement mentionnée plus haut, a été introduite par Haskell, Hrushovski et Macpherson \cite{hhm}, pour étudier les corps valués algébriquement clos. 
+Le point de départ est le constat suivant: les structures et théories stables ont de très bonnes propriétés de régularité modèle-théoriques; cependant, bon nombre de théories et structures intéressantes n'étant pas stables, on ne peut appliquer telle quelle la théorie de la stabilité. 
+L'idée est alors de considérer la \emph{partie stable} d'une structure donnée, qui est la "plus grande sous-structure stable", et d'essayer de contrôler des comportements dans la structure totale via leur trace sur la partie stable. 
+
+
+
+Par exemple, dans les corps valués algébriquement clos, la partie stable est, à revêtement interne près, le corps résiduel, qui est un corps algébriquement clos \emph{pur stablement plongé}\footnote{Ceci signifie que la structure induite par le corps valué est exactement la structure de corps, et rien de plus.}. L'on comprend alors que seuls certains types, certaines extensions, pourront être bien contrôlé(e)s par la partie stable: dans un corps valué, les extensions \emph{ramifiées} (qui font grossir le groupe de valeurs) ou \emph{immédiates} (qui ne font grossir ni le corps résiduel, ni le groupe de valeurs) ont peu de chances d'être comprises via le corps résiduel.
+
+
+On dit\footnote{A certains détails techniques près, que nous ignorerons ici.} qu'un type\footnote{C'est-à-dire un point dans le spectre d'une algèbre d'ensembles définissables, i.e. une collection cohérente maximale d'ensembles définissables.} est \emph{stablement dominé} si \emph{le comportement de ses extensions génériques est contrôlé par ce qu'elles induisent sur la partie stable}. L'exemple canonique, pour les corps valués algébriquement clos, est celui du type d'une \emph{extension monogène purement résiduelle d'un corps sphériquement complet}\footnote{Il s'agit d'un analogue fort de la complétude dans le cadre général des corps valués ultramétriques, où l'on demande que toute chaîne de boules a un point d'accumulation; cette notion est pertinente lorsque la valuation n'est pas discrète.}. La notion a ensuite été généralisée à celle de \emph{domination résiduelle}, dans des contextes divers \cite{EHM19} \cite{ResDom2} \cite{Vic22} \cite{KRV24}.
 
 \subsection{Travaux existants}
 
 
-\subsection{Résultats principaux de l'article}
+\begin{itemize}
+	\item Les travaux de Haskell, Hrushovski et Macpherson \cite{hhm} contiennent des résultats fondamentaux sur la domination stable, entre autres, des propriétés de changement de base pour les types stablement dominés et la métastabilité, relativement au groupe de valeurs, de la théorie des corps valués algébriquement clos. Un résultat particulièrement important pour la suite est le suivant: 
+	
+
+	Dans une théorie quelconque, si $G$ est un groupe définissable admettant un générique stablement dominé $p$, alors il existe une famille de groupes définissables dans la partie stable $\mathfrak{g}_i$, et de morphismes définissables $f_i: G \rightarrow g_i$, tels que le type $p$ est stablement dominé par la famille\footnote{Ce qui signifie que le contrôle décrit plus haut n'a besoin que de l'information contenue dans ces fonctions.} $(f_i)$.
+
+
+	
+	\item Plus récemment, Cubides Kovacsics, Rideau-Kikuchi et Vicar\'{i}a \cite{Kovacsics_Rideau-Kikuchi_Vicaría_2025} ont défini une notion plus générale de \emph{domination résiduelle} et montré l'équivalence, sous hypothèses techniques assez faibles, entre cette notion et la domination stable au sens des corps valués algébriquement clos, y compris pour des imaginaires\footnote{C'est-à-dire des classes d'équivalence de uplets du corps valué modulo relation d'équivalence définissable; les uplets dans le corps résiduel sont un exemple relativement simple d'imaginaires dans les corps valués.}. Il s'agit du résultat le plus complet à ce jour.
+
+
+
+
+\end{itemize}
+
+
+
+
+\subsection{Résultats principaux}
 Dans \cite{Mutlu_Wang_arxiv_2025}, nous démontrons les résultats suivants pour les corps valués henseliens d'équicaractéristique nulle:
 
 \begin{itemize}
-	\item La domination résiduelle, pour les extensions régulières de type fini, est caractérisée par la propriété de la base séparée et l'absence de ramification. Voir \cite[Corollary ???]{Mutlu_Wang_arxiv_2025}.
-	\item La domination résiduelle au sens du corps valué henselien ambiant équivaut à la domination stable au sens de sa clôture algébrique\footnote{Munie de l'unique valuation étendant la sienne, par henselianité.}, c'est-à-dire au sens de la théorie des corps valués algébriquement clos. Voir \cite[???]{Mutlu_Wang_arxiv_2025}.
+	\item La domination résiduelle, pour les extensions régulières de type fini, est caractérisée par la conjonction de la propriété de la base séparée\footnote{Ce qui signifie qu'il existe des bases pour lesquelles les normes de combinaisons linéaires se calculent explicitement en fonction des normes des coefficients.} et de l'absence de ramification. Voir \cite[Corollary ???]{Mutlu_Wang_arxiv_2025}.
+	\item La domination résiduelle au sens du corps valué henselien ambiant équivaut à la domination stable au sens de sa clôture algébrique\footnote{Munie de l'unique valuation étendant la sienne, par henselianité; cette structure est une "restriction" du corps henselien ambiant, car seules les formules sans quantificateurs sont prises en compte.}, c'est-à-dire au sens de la théorie des corps valués algébriquement clos. Voir \cite[???]{Mutlu_Wang_arxiv_2025}. Ce résultat, moins général que celui de \cite{Kovacsics_Rideau-Kikuchi_Vicaría_2025}, a été obtenu indépendamment, avec des méthodes plus algébriques et plus simples. Il nous est utile pour ce qui suit.
 	\item Supposons que la théorie considérée est $\mathrm{NTP}_2$ (il s'agit d'une notion de modération assez faible, couvrant un grand nombre d'exemples). Si $G$ est un groupe définissable, vivant dans le corps valué, possédant un générique résiduellement dominé, alors il existe un groupe algébrique sur le corps résiduel $\mathfrak{g}$ et un morphisme de groupes définissable surjectif $f$ de\footnote{la composante connexe de} $G$ vers $\mathfrak{g}$, tel que tous les génériques de\footnote{la composante connexe de} $G$ sont dominés par $f$. En particulier, tous les génériques de $G$ sont résiduellement dominés. Voir ???
 	\item Supposons maintenant que la théorie considérée est NIP\footnote{Notion plus restrictive que $\mathrm{NTP}_2$, mais encore assez large.}, et soit $G$ un groupe définissable ayant un générique résiduellement dominé, comme précédemment. Alors, il existe un groupe $G_1$, définissable et stablement dominé au sens des corps valués algébriquement clos, et un morphisme de groupes définissables $\iota$, de noyau fini, allant de\footnote{la composante connexe de} $G$ dans $G_1$, tel que l'image de tout générique de\footnote{la composante connexe de} $G$ est générique dans $G_1$ au sens des corps valués algébriquement clos.
 	
