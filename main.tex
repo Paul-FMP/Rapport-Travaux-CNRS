@@ -37,10 +37,18 @@
 
 \part{Théorie géométrique des modèles}
 
-La théorie des modèles (du premier ordre) vise à étudier des structures et théories\footnote{Pour cette partie, une théorie du premier ordre est une classe de structures du premier ordre définie par une collection d'axiomes du premier ordre.} (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. En logique classique, les ensembles définissables forment des algèbres de Boole (intersection, complémentaire, union); par dualité de Stone, l'on peut donc s'intéresser aux espaces topologiques profinis\footnote{C'est-à-dire compacts et dont les ouverts sont unions d'ouverts-fermés.} associés. Ces espaces sont appelés \emph{espaces de types}, et donnent un point de vue plus "géométrique" pour l'étude des ensembles définissables\footnote{De même que l'étude des schémas affines peut être considérée comme plus "géométrique" que l'étude des anneaux commutatifs; en fait, \emph{les espaces profinis sont des schémas affines} où le faisceau d'anneaux peut être intégralement reconstruit à partir de la topologie, via les ouverts-fermés.}.
+La théorie des modèles du premier ordre\footnote{Rappelons que cela signifie que les seuls quantificateurs autorisés sont ceux portant sur des éléments; il n'y a pas de quantification sur les parties.} vise à étudier des structures et théories\footnote{Pour cette partie, une théorie du premier ordre est une classe de structures du premier ordre définie par une collection d'axiomes du premier ordre.} (algébriques, combinatoires, etc.) en s'appuyant sur des outils de logique (du premier ordre). Dans sa version moderne, les objets centraux sont les \emph{ensembles définissables}, c'est-à-dire les collections d'éléments définies par des formules du langage. En logique classique, les ensembles définissables forment des algèbres de Boole (intersection, complémentaire, union); par dualité de Stone, l'on peut donc s'intéresser aux espaces topologiques profinis\footnote{C'est-à-dire compacts et dont les ouverts sont unions d'ouverts-fermés.} associés. Ces espaces sont appelés \emph{espaces de types}, et donnent un point de vue plus "géométrique" pour l'étude des ensembles définissables\footnote{De même que l'étude des schémas affines peut être considérée comme plus "géométrique" que l'étude des anneaux commutatifs; en fait, \emph{les espaces profinis sont des schémas affines} où le faisceau d'anneaux peut être reconstruit à partir de la topologie, via les ouverts-fermés.}.
 
 
 Si la complexité combinatoire des ensembles définissables est faible, la théorie est considérée comme modérée. Par exemple, les \emph{théories stables}, définies dans \cite{Shelah-Thesis}, et étudiées plus en détail dans \cite{She-NIP}, sont celles où l'on ne peut définir d'ordre total infini.
+
+\begin{exemple}
+	\begin{itemize}
+		\item Dans les corps algébriquement clos, munis uniquement de la structure de corps, les seuls ensembles définissables sont les \emph{constructibles}, c'est-à-dire les combinaisons booléennes de lieux d'annulation de polynômes. En particulier, on dit que la théorie \emph{élimine les quantificateurs}: même en s'autorisant à utiliser des quantificateurs, les seuls ensembles que l'on peut définir par des formules du premier ordre sont déjà définissables sans quantificateurs.
+		\item A l'inverse, dans l'anneau des entiers relatifs, la complexité de quantification n'a pas de borne, et est en lien avec des questions fines de calculabilité: les ensembles définissables par une formule existentielle sont exactement ceux qui sont récursivement énumérables, c'est-à-dire pour lesquels il existe une fonction calculable qui les énumère, etc.
+
+	\end{itemize}
+\end{exemple}
 
 
 
@@ -51,18 +59,77 @@ Un principe général, la \emph{trichotomie de Zilber}, affirme que le comportem
 
 \section{Revêtements et groupoïdes définissables}
 
+Lorsque l'on étudie la structure fine des ensembles définissables dans une théorie ou structure donnée, la notion de \emph{revêtement} apparaît assez vite. Etant donnée une structure $\mathbb{U}$, un \emph{revêtement de} $\mathbb{U}$ \emph{via une\footnote{Nous nous concentrerons ici sur le cas d'une seule nouvelle sorte; généraliser la notion à plusieurs sortes, voire une infinité, ne pose pas de difficulté particulière.} nouvelle sorte} $S$ est une structure $\mathbb{U}'$, dont l'ensemble sous-jacent est l'union disjointe de celui de $\mathbb{U}$ et de $S$, telle que la structure définissable induite sur $\mathbb{U}$ coïncide avec celle d'origine. On dit aussi que $\mathbb{U}$ est \emph{stablement plongée} dans $\mathbb{U}'$. Un fait important, qui explique la terminologie, est que, dans une structure stable, tout ensemble définissable est stablement plongé.
+
+
+\subsection{Revêtements internes et groupoïdes de liaison}
+
+Une classe de revêtements intéressante est celle des \emph{revêtements internes}. Dans une structure ambiante donnée, un ensemble définissable $X$ est \emph{interne} à un ensemble définissable $Y$ s'il existe une bijection définissable entre $X$ et un ensemble définissable\footnote{L'on dit parfois "interprétable", car un quotient définissable est en jeu; il y a une manière canonique d'étendre la structure définissable aux quotients définissables, appelés \emph{imaginaires}.} $Z \subseteq Y^k/E$, où $k$ est un entier, et $E$ une relation d'équivalence définissable sur $Y^k$.
+
+
+Un point crucial est qu'une telle bijection définissable peut demander des paramètres (pour être définie) supplémentaires, par rapport à ceux utilisés pour définir $X$ et $Y$.
+
+\begin{exemple}
+	Considérons la théorie des corps différentiellement clos de caractéristique nulle\footnote{Il s'agit de la théorie des corps algébriquement clos de caractéristique nulle munis d'une dérivation, i.e. un endomorphisme additif vérifiant la formule de Leibniz, telle que toute équation différentielle polynomiale en une variable, non dégénérée, a "beaucoup" de solutions.}, notée $\mathrm{DCF}_0$. Cette théorie est stable, et élimine les quantificateurs.
+
+	Le corps des constantes, défini par l'équation différentielle $x' = 0$, est algébriquement clos, et sa structure induite est réduite aux opérations de corps. Considérons également l'ensemble $X$ défini par l'équation $x'=1$. Alors, par linéarité, tout élément de $X$ fournit une bijection définissable entre $X$ et le corps des constantes. Cependant, sans paramètres, il n'y a pas de fonctions définissables intéressante entre les deux.
+\end{exemple}
+
+
+Cette dépendance en les paramètres est contrôlée par un \emph{groupoïde} de liaison, introduit par Hrushovski dans \cite{HRUSHOVSKI_2012}, qui est une version intrinsèque des \emph{groupes de liaison}, étudiés en théorie de la stabilité, notamment par Zilber \cite{Zilber_1980} et Poizat \cite{Poizat_1983}, ce dernier développant une généralisation modèle-théorique de la théorie de Galois des corps, incluant les quotients définissables. Rappelons qu'un groupoïde est donné par une collection d'objets et de morphismes inversibles, avec une loi de composition associative et unitaire; la principale différence avec la notion de groupe est que la composée de deux morphismes n'est définie que si le domaine de l'un est égale à l'image de l'autre. L'intérêt, ici comme dans d'autres domaines\footnote{L'on pensera par exemple à la différence entre groupe fondamental et groupoïde fondamental en topologie algébrique, la première notion supposant de choisir un point base.}, est \emph{l'absence de choix} à faire.
 
 
 
+\subsection{Questions}
 
-\subsection{Revêtements internes et groupes de liaison}
+Etant donnée une structure $\mathbb{U}$ et un ensemble $A$ définissable sans paramètres, un revêtement $(\mathbb{U}, S)$ de $\mathbb{U}$ est dit \emph{1-analysable au-dessus de A} s'il existe
+une fonction surjective définissable sans paramètres $f: S \rightarrow A$, dont les fibres $S_a$ sont internes à $\mathbb{U}$.
+
+\begin{exemple}
+	Dans la théorie des corps différentiellement clos, l'ensemble $X$ défini par l'équation différentielle ${(\frac{x'}{x})' = 0}$ et la condition $x \neq 0$, donne un revêtement $1$-analysable sur le corps des constantes $C$, via la fonction de dérivation logarithmique $x \in X \mapsto \frac{x'}{x} \in C$. En effet, pour tout $\lambda \in C$, l'ensemble $X_{\lambda} = \lbrace x\neq 0 \, | \, x' = \lambda \cdot x \rbrace$ est interne à $C$: toute solution définit, par multiplication, une bijection entre $X_{\lambda}$ et $C\setminus \lbrace 0 \rbrace$.
+
+	Notons d'ailleurs que $X$ est un sous-groupe multiplicatif du corps différentiel ambiant.
+\end{exemple}
+
+
+\begin{itemize}
+	\item Les constructions de Hrushovski peuvent-elles s'étendre au cas des revêtements $1$-analysables ?
+	\item Si oui, peut-on donner un critère pour qu'un revêtement $1$-analysable soit en fait interne ?
+	\item Y a-t-il des versions uniformes en familles ?
+
+\end{itemize}
+
 
 
 
 \subsection{Travaux existants}
 
+\begin{itemize}
+	\item Dans \cite{HRUSHOVSKI_2012}, Hrushovski démontre, entre autres choses\footnote{Il étudie également les liens avec les questions d'amalgamation, qui vont au-delà du cadre de ce rapport.}, une correspondance, pour toute structure $\mathbb{U}$, entre groupoïdes définissables\footnote{Avec une petite hypothèse technique, signalée par Haykazyan et Moosa.} \emph{sans paramètres} dans $\mathbb{U}$ et revêtements internes de $\mathbb{U}$ à une sorte supplémentaire. L'idée cruciale est que les morphismes du groupoïde définissable sont des bijections définissables rendant compte de l'internalité de la sorte supplémentaire.
+	\item Dans \cite{Haykazyan_Moosa_2018}, Haykazyan et Moosa démontrent d'une part que la correspondance de Hrushovski provient d'une équivalence de catégories, pour des bonnes notions de morphismes de revêtements internes\footnote{En l'occurrence, il s'agit de fonctions entre les sortes supplémentaires, définissables dans un revêtement interne commun.} et de morphismes de groupoïdes définissables\footnote{Ici, fidèles au principe de ne pas faire de choix arbitraire, ils définissent un morphisme de groupoïdes comme, essentiellement, un \emph{profoncteur} définissable, c'est-à-dire une catégorie étendant l'union disjointe, vérifiant des propriétés techniques importantes.}.
+
+	Par ailleurs, ils étendent la correspondance au cas de revêtements $1$-analysables à fibres indépendantes\footnote{Condition forte, exprimant l'absence d'interaction, au niveau des ensembles définissables, entre les fibres.}, c'est-à-dire qu'ils donnent une version "uniforme le long de familles définissables" de la construction. 
+
+	\item Dans sa thèse, Jimenez démontre un résultat uniforme \cite[Theorem 3.1.3]{Jimenez_thesis_2020} le long de familles de revêtements internes qu'il appelle \emph{paires relativement internes}. Il construit également des \emph{Delta} groupoïdes\footnote{Une notion similaire, mais plus simple, à celle de groupoïdes \emph{simpliciaux}.}, qu'il utilise pour caractériser l'internalité pour ses paires relativement internes, via une condition de dégénérescence. Cependant, comme expliqué dans la discussion \cite[Fin de la Section 3.2]{Jimenez_thesis_2020}, ses constructions ne répondent pas à la question de non-canonicité des paramètres.
+		%En collaboration avec Pillay et Jaoui, il développe la notion d'\emph{internalité relative uniforme}, qui est équivalente à la dégénérescence des Delta groupoïdes
+
+\end{itemize}
+
+
+
 
 \subsection{Contributions}
+Dans l'article \cite{Wang_2021}, je définis les notions suivantes:
+
+
+
+Je démontre alors les résultats suivants, pour toute $\mathbb{U}$ et tout $A$:
+
+\begin{itemize}
+	\item Il existe une correspondance entre revêtements $1$-analysables sur $A$, uniformément finiment engendrés\footnote{Condition technique de finitude des langages des revêtements intermédiaires.}, localement stablement plongés\footnote{Condition technique de plongement stable de revêtements intermédiaires dans le revêtement global.}, et Delta groupoïdes sur $A$.
+
+\end{itemize}
+
 
 
 \section{Configurations de groupe génériquement stables}
@@ -342,7 +409,7 @@ Pour cet article, une bonne partie des idées ont été le résultat d'interacti
 
 \part{Théorie catégorique des systèmes}
 
-La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ce projet de recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques}, possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, ce travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre; il repose également sur la théorie synthétique des probabilités. Il me semble utile de commencer par rappeler en quoi consistent les points de vue "monoidal symétrique" et "coalgébrique", ainsi que la théorie synthétique des probabilités, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes, et mes contributions.
+La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ma recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques}, possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, mon travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre; il repose également sur la théorie synthétique des probabilités. Il me semble utile de commencer par rappeler en quoi consistent les points de vue "monoidal symétrique" et "coalgébrique", ainsi que la théorie synthétique des probabilités, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes, et mes contributions.
 
 \section{Point de vue doublement catégorique}
 
