@@ -85,11 +85,13 @@ Cette dépendance en les paramètres est contrôlée par un \emph{groupoïde} de
 Etant donnée une structure $\mathbb{U}$ et un ensemble $A$ définissable sans paramètres, un revêtement $(\mathbb{U}, S)$ de $\mathbb{U}$ est dit \emph{1-analysable au-dessus de A} s'il existe
 une fonction surjective définissable sans paramètres $f: S \rightarrow A$, dont les fibres $S_a$ sont internes à $\mathbb{U}$.
 
-\begin{exemple}
+\begin{exemple}\label{ex_DCF_1-an}
 	Dans la théorie des corps différentiellement clos, l'ensemble $X$ défini par l'équation différentielle ${(\frac{x'}{x})' = 0}$ et la condition $x \neq 0$, donne un revêtement $1$-analysable sur le corps des constantes $C$, via la fonction de dérivation logarithmique $x \in X \mapsto \frac{x'}{x} \in C$. En effet, pour tout $\lambda \in C$, l'ensemble $X_{\lambda} = \lbrace x\neq 0 \, | \, x' = \lambda \cdot x \rbrace$ est interne à $C$: toute solution définit, par multiplication, une bijection entre $X_{\lambda}$ et $C\setminus \lbrace 0 \rbrace$.
 
-	Notons d'ailleurs que $X$ est un sous-groupe multiplicatif du corps différentiel ambiant.
+	Notons que $X$ est un sous-groupe multiplicatif du corps différentiel ambiant, et s'inscrit dans la suite exacte courte de groupes abéliens suivante: $1 \rightarrow C^{\times} \rightarrow X \rightarrow C \rightarrow 0$.
 \end{exemple}
+
+
 
 
 \begin{itemize}
@@ -105,8 +107,8 @@ une fonction surjective définissable sans paramètres $f: S \rightarrow A$, don
 \subsection{Travaux existants}
 
 \begin{itemize}
-	\item Dans \cite{HRUSHOVSKI_2012}, Hrushovski démontre, entre autres choses\footnote{Il étudie également les liens avec les questions d'amalgamation, qui vont au-delà du cadre de ce rapport.}, une correspondance, pour toute structure $\mathbb{U}$, entre groupoïdes définissables\footnote{Avec une petite hypothèse technique, signalée par Haykazyan et Moosa.} \emph{sans paramètres} dans $\mathbb{U}$ et revêtements internes de $\mathbb{U}$ à une sorte supplémentaire. L'idée cruciale est que les morphismes du groupoïde définissable sont des bijections définissables rendant compte de l'internalité de la sorte supplémentaire.
-	\item Dans \cite{Haykazyan_Moosa_2018}, Haykazyan et Moosa démontrent d'une part que la correspondance de Hrushovski provient d'une équivalence de catégories, pour des bonnes notions de morphismes de revêtements internes\footnote{En l'occurrence, il s'agit de fonctions entre les sortes supplémentaires, définissables dans un revêtement interne commun.} et de morphismes de groupoïdes définissables\footnote{Ici, fidèles au principe de ne pas faire de choix arbitraire, ils définissent un morphisme de groupoïdes comme, essentiellement, un \emph{profoncteur} définissable, c'est-à-dire une catégorie étendant l'union disjointe, vérifiant des propriétés techniques importantes.}.
+	\item Dans \cite{HRUSHOVSKI_2012}, Hrushovski démontre, entre autres choses\footnote{Il étudie également les liens avec les questions d'amalgamation, qui vont au-delà du cadre de ce rapport.}, une correspondance, pour toute structure $\mathbb{U}$, entre groupoïdes définissables\footnote{Avec une petite hypothèse technique, signalée par Haykazyan et Moosa.} \emph{sans paramètres} dans $\mathbb{U}$ et revêtements internes de $\mathbb{U}$ à une sorte supplémentaire. L'idée cruciale est que les morphismes du groupoïde définissable sont des bijections définissables témoignant de l'internalité de la sorte supplémentaire.
+	\item Dans \cite{Haykazyan_Moosa_2018}, Haykazyan et Moosa démontrent d'une part que la correspondance de Hrushovski provient d'une équivalence de catégories, pour des bonnes notions de morphismes de revêtements internes\footnote{En l'occurrence, il s'agit de fonctions entre les sortes supplémentaires, définissables dans un revêtement interne commun.} et de morphismes de groupoïdes définissables. Fidèles au principe de ne pas faire de choix arbitraire, ils définissent un morphisme de groupoïdes comme, essentiellement, un \emph{profoncteur} définissable, c'est-à-dire une catégorie étendant l'union disjointe en ajoutant des morphismes entre les objets des deux groupoïdes; ils demandent par ailleurs des propriétés importantes d'homogénéité.
 
 	Par ailleurs, ils étendent la correspondance au cas de revêtements $1$-analysables à fibres indépendantes\footnote{Condition forte, exprimant l'absence d'interaction, au niveau des ensembles définissables, entre les fibres.}, c'est-à-dire qu'ils donnent une version "uniforme le long de familles définissables" de la construction. 
 
@@ -119,16 +121,57 @@ une fonction surjective définissable sans paramètres $f: S \rightarrow A$, don
 
 
 \subsection{Contributions}
-Dans l'article \cite{Wang_2021}, je définis les notions suivantes:
+Dans l'article \cite{Wang_2021}, je définis une notion de \emph{groupoïde simplicial\footnote{Qui verait plutôt s'appeler Delta groupoïde, comme dans \cite{Jimenez_thesis_2020}.} définissable} au-dessus d'un ensemble définissable $A$. Un tel objet est donné par:
+
+\begin{enumerate}
+	\item Une famille $\mathcal{G}_n$, $n \geq 1$, de groupoïdes définissables sans paramètres, où, pour tout $n$, le groupoïde $\mathcal{G}_n$ admet une partition définissable indexée par l'ensemble interprétable\footnote{En effet, cet ensemble est isomorphe au quotient de l'ensemble $A^{=n}$ des $n$-uplets de $A$ sans répétition, par l'action du groupe symétrique $\mathfrak{S}_n$.} des parties de $A$ de cardinal $n$.
+	\item Des morphismes $\iota_{n, m}: \mathcal{G}_n \rightarrow \mathcal{G}_m$, pour $n < m$, entre groupoïdes définissables, au sens de Haykazyan et Moosa \cite{Haykazyan_Moosa_2018}, c'est-à-dire donnés par une extension définissable de la catégorie définissable $\mathcal{G}_n \sqcup \mathcal{G}_m$, i.e. des collections de morphismes des objets de $\mathcal{G}_n$ vers ceux de $\mathcal{G}_m$.
+
+
+	Je demande que ces morphismes de groupoïdes $\iota_{n, m}$ soient compatibles avec les partitions de $\mathcal{G}_n$ et $\mathcal{G}_m$, que les fonctions à l'intérieur soient \emph{injectives}, et que l'égalité $\iota_{n,m} \circ \iota_{k, n} = \iota_{k, m}$ soit vraie pour $k < n <m$, au sens de la composition de morphismes de groupoïdes (voir \cite{Haykazyan_Moosa_2018}).
+\end{enumerate}
+
+
+Je définis ensuite une notion de \emph{morphisme entre groupoïdes simpliciaux sur A}.
 
 
 
 Je démontre alors les résultats suivants, pour toute $\mathbb{U}$ et tout $A$:
 
 \begin{itemize}
-	\item Il existe une correspondance entre revêtements $1$-analysables sur $A$, uniformément finiment engendrés\footnote{Condition technique de finitude des langages des revêtements intermédiaires.}, localement stablement plongés\footnote{Condition technique de plongement stable de revêtements intermédiaires dans le revêtement global.}, et Delta groupoïdes sur $A$.
+	\item Il existe une correspondance entre revêtements $1$-analysables sur $A$, uniformément finiment engendrés\footnote{Condition technique de finitude.}, localement stablement plongés\footnote{Condition sur les revêtements internes intermédiaires.}, et groupoïdes simpliciaux sur $A$ vérifiant la propriété de l'union disjointe\footnote{Condition exprimant le fait que les objets en haut degré sont unions disjointes d'objets en bas degré.}.
+	\item Cette correspondance provient d'une équivalence de catégories, pour des catégories de revêtements $1$-analysables et de groupoïdes simpliciaux \emph{constituées d'isomorphismes}.
+	\item Les constructions se généralisent en supprimant la condition de finitude du côté des revêtements; les groupoïdes simpliciaux obtenus ne sont alors que pro-définissables, i.e. obtenus par produits possiblement infinis d'ensembles définissables.
+	\item Je calcule ensuite les objets correspondants pour l'exemple \ref{ex_DCF_1-an}, ainsi que pour la suite exacte courte de groupe abéliens $0 \rightarrow {(\mathbb{Z}/ 2 \mathbb{Z})}^{\mathbb{N}} \rightarrow {(\mathbb{Z}/ 4 \mathbb{Z})}^{\mathbb{N}} \rightarrow {(\mathbb{Z}/ 2 \mathbb{Z})}^{\mathbb{N}} \rightarrow 0$.
 
+	Je montre, pour ces deux exemples, que les groupoïdes simpliciaux restreints aux degrés $\leq 3$ suffisent à capturer la structure totale des revêtements: seule la loi de groupe compte, et elle est déjà encodée dans les degrés $\leq 3$.
 \end{itemize}
+
+\begin{mdframed}{\textbf{Idées pour construire des groupoïdes simpliciaux:}}
+	\begin{itemize}
+		\item Suivant la suggestion de Hrushovski dans \cite{HRUSHOVSKI_2012}, étant donné un revêtement $1$-analysable $(\mathbb{U}, S)$ sur un ensemble définissable $A$, je considère, pour toute partie finie $\overline{c} \subset A$, le revêtement \emph{interne} défini par l'union des fibres $S_{\overline{c}} = \bigcup\limits_{a \in \overline{c}} S_a$. La construction de Hrushovski s'applique alors, j'obtiens un groupoïde définissable avec les paramètres $\overline{c}$, que je note $\mathcal{G}_{\overline{c}}$.
+		\item Je montre que, pour tout $n$, la construction ci-dessus peut se faire uniformément en $\overline{c} \subset A$ de cardinal $n$; j'obtiens donc des groupoïdes définissables $\mathcal{G}_n$.
+		\item Les morphismes $\iota_{n, m}: \mathcal{G}_n \rightarrow \mathcal{G}_m$ sont construits à partir des inclusions $S_{\overline{c}} \hookrightarrow S_{\overline{c}'}$, pour $\overline{c} \subset \overline{c}' \subset A$ finies.
+	\end{itemize}
+
+Cette construction est proche de celle de Jimenez; la principale différence est que mes morphismes de groupoïdes sont des profoncteurs, et non pas simplement des foncteurs. C'était déjà un point crucial dans les travaux de Haykazyan et Moosa, qui faisait fonctionner leurs constructions.
+
+\end{mdframed}
+
+
+\begin{mdframed}{\textbf{Idées pour construire des revêtements 1-analysables:}}
+	Etant donné un groupoïde simplicial définissable $\mathcal{G}$ au-dessus d'un $A$, je construis un revêtement $1$-analysable sur $A$ comme suit:
+
+	\begin{itemize}
+		\item Je construis par induction transfinie un \emph{système cohérent d'inclusions}, ce qui correspond à choisir un objet par composante connexe en chaque degré, ainsi qu'une famille cohérente d'injections parmi les fonctions des $\iota_{n, m}$, entre ces objets. 
+		\item Etant donné un système cohérent d'inclusions, je construit une sorte supplémentaire $S$, consistant à recoller les copies des objets choisis le long des injections de la famille. Par construction, la sorte $S$ vient avec une surjection définissable $S \rightarrow A$, dont les fibres sont internes à $\mathbb{U}$.
+		\item Pour montrer que cela ne dépend pas des choix faits, je construis par induction, étant donnés deux systèmes cohérents d'inclusions, une "famille cohérente d'isomorphismes partiels" entre eux, constituée de morphismes de $\mathcal{G}$. Une telle famille s'assemble alors en un isomorphisme de structures entre les extensions construites.
+		\item Pour montrer que les structures que je construis sont bien des revêtements, j'applique un critère d'extension d'automorphismes \cite[Appendix, Lemma 1]{ChaHru-ACFA}, et j'utilise de nouveau une construction par induction transfinie.
+	\end{itemize}
+
+
+	Cette construction généralise celle de Haykazyan et Moosa \cite{Haykazyan_Moosa_2018}, avec des conditions de compatibilité supplémentaires, automatiques pour eux vu leur hypothèse d'indépendance des fibres.
+\end{mdframed}
 
 
 
