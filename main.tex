@@ -40,17 +40,65 @@
 
 
 
-Ce rapport est divisé en deux. Dans une première partie, je présente mes travaux en théorie géométrique des modèles. 
+Ce rapport est divisé en deux. Dans une première partie, je présente mes travaux en théorie géométrique des modèles, en commençant par exposer les principes généraux. 
+
+
+Dans la section \ref{sect_groupoids}, je donne du contexte sur la notion de revêtement en théorie des modèles, puis présente mes résultats sur la correspondance entre revêtements analysables et groupoïdes "simpliciaux" définissables, suivant une suggestion de Hrushovski, dans l'article publié suivant: 
 
 
 \begin{mdframed}[backgroundcolor=yellow]
 	\begin{itemize}[$\bullet$]
 		\item 	\emph{Extending Hrushovski's groupoid-cover correspondence using simplicial groupoids} \cite{Wang_2021}.
 	\end{itemize}
-
 \end{mdframed}
 
-Dans la seconde partie, je présente mes travaux plus récents, en théorie catégorique des systèmes.
+
+Ensuite, dans la section \ref{sect_config_group}, j'explique la notion de configuration de groupe, rappelle l'énoncé du théorème de configuration de groupe classique (attribué à Hrushovski), et présente ma généralisation au cadre génériquement stable, de la publication
+
+\begin{mdframed}[backgroundcolor=yellow]
+	\begin{itemize}[$\bullet$]
+		\item 	\emph{The group configuration theorem for generically stable types} \cite{Wang_group_config}.
+	\end{itemize}
+\end{mdframed}
+
+
+Le théorème de configuration de groupe peut, avec des ajustements et en le combinant avec d'autres outils, être utilisé pour classifier les groupes définissables dans diverses structures. Dans la section \ref{sect_interp_groups}, je donne du contexte par rapport à cette question des groupes et corps définissables, et présente mes résultats généraux, inclus dans ma thèse \cite[Chapter 3]{Wang_thesis_2025}, ainsi que dans la prépublication
+
+\begin{mdframed}[backgroundcolor=yellow]
+	\begin{itemize}[$\bullet$]
+		\item 	\emph{On groups and fields interpretable in $\mathrm{NTP}_2$ fields} \cite{Wang_definable_fields}.
+	\end{itemize}
+\end{mdframed}
+
+
+Mes résultats généraux de classification ne s'appliquent pas à tous les exemples : certaines structures intéressantes, comme les corps valués D-henseliens, ne vérifient pas les hypothèses requises. Dans la section \ref{sect_VDF}, après avoir énoncé les résultats connus les plus importants sur ces corps, je décris mes contributions, reposant sur la stabilité générique, à l'étude des groupes et corps définissables dans ces structures, présentes dans ma thèse (pas encore soumises pour publication)
+
+\begin{mdframed}[backgroundcolor=yellow]
+	\begin{itemize}[$\bullet$]
+		\item 	\emph{On groups and fields definable in D-henselian fields} \cite[Chapter 4]{Wang_thesis_2025}.
+	\end{itemize}
+\end{mdframed}
+
+
+Dans le contexte des corps valués, la stabilité générique est en lien avec une autre notion, celle de domination stable, capturant l'idée de contrôle via le corps résiduel, surtout étudiée dans le cas des corps valués \emph{algébriquement clos}. Des généralisations à d'autres corps valués, à travers des notions de domination résiduelle, ont été développées récemment. Dans la section \ref{sect_resdom}, je présente ce contexte, ainsi que mon travail en collaboration avec Dicle Mutlu, sur l'une de ces notions, et le lien avec les groupes définissables 
+
+
+\begin{mdframed}[backgroundcolor=yellow]
+	\begin{itemize}[$\bullet$]
+		\item 	\emph{Residually Dominated Groups in Henselian Valued Fields of Equicharacteristic Zero} \cite{Mutlu_Wang_arxiv_2025}.
+	\end{itemize}
+\end{mdframed}
+
+\bigskip
+
+Dans la seconde partie, je présente mes travaux les plus récents, en théorie catégorique des systèmes. Avant d'introduire le point de vue doublement catégorique le plus récent, je donne du contexte sur deux approches classiques, à savoir l'utilisation de catégories monoidales symétriques
+et les coalgèbres d'endofoncteurs. Je donne également un aperçu des enjeux en théorie synthétique des probabilités, avant de rentrer dans le coeur du sujet, et d'expliquer mes contributions à la théorie doublement catégorique des systèmes, de la prépublication  
+\begin{mdframed}[backgroundcolor=yellow]
+	\begin{itemize}[$\bullet$]
+		\item 	\emph{Nondeterministic Behaviours in Double Categorical Systems Theory} \cite{Wang_2025}.
+	\end{itemize}
+\end{mdframed}
+
 
 %%%%%%%%%%%%%%%%%
 
@@ -66,7 +114,6 @@ Si la complexité combinatoire des ensembles définissables est faible, la théo
 		\item Dans les corps algébriquement clos, munis uniquement de la structure de corps, les seuls ensembles définissables sont les \emph{constructibles}, c'est-à-dire les combinaisons booléennes de lieux d'annulation de polynômes. En particulier, on dit que la théorie \emph{élimine les quantificateurs}: même en s'autorisant à utiliser des quantificateurs, les seuls ensembles que l'on peut définir par des formules du premier ordre sont déjà définissables sans quantificateurs.
 		\item A l'inverse, dans l'anneau des entiers relatifs, la complexité de quantification n'a pas de borne, et est en lien avec des questions fines de calculabilité: les ensembles définissables par une formule existentielle sont exactement ceux qui sont récursivement énumérables, c'est-à-dire pour lesquels il existe une fonction calculable qui les énumère, etc.
 		\item Entre les deux, dans le corps des nombres réels, l'on peut utiliser des quantificateurs existentiels pour définir des objets tels que le disque unité fermé: $D = \lbrace (x, y) \, | \, \exists z \,\, x^2+y^2 = 1 + z^2 \rbrace$.
-
 	\end{itemize}
 \end{exemple}
 
@@ -77,7 +124,7 @@ Si la complexité combinatoire des ensembles définissables est faible, la théo
 Un principe général, la \emph{trichotomie de Zilber}, affirme que le comportement d'une théorie modérée dépend du type de structures algébriques définissables\footnote{C'est-à-dire, dont l'ensemble sous-jacent et les opérations sont définissables.} qui y apparaissent: ou bien aucun groupe infini définissable, ou bien des groupes abéliens infinis définissables mais pas de corps infini définissable, ou bien des corps infinis définissables. Ces idées ont été formalisées dans divers contextes, à l'instar des géométries de Zariski\footnote{Cadre visant à capturer de manière abstraite le comportement géométrique des courbes algébriques.} \cite{hru-zilber-zariski} ou des théories o-minimales\footnote{Point de vue, modèle-théorique à l'origine, sur la géométrie et l'analyse réelles, consistant à restreindre les classes de fonctions et d'ensembles afin d'exclure les comportements pathologiques.} \cite{omin-trichotomy}. Une question connexe, au coeur de mes travaux, est celle de la \emph{classification des groupes et corps définissables}, ou interprétables\footnote{Un ensemble interprétable est un quotient d'ensemble définissable par une relation d'équivalence définissable.}, dans une structure donnée.
 
 
-\section{Revêtements et groupoïdes définissables}
+\section{Revêtements et groupoïdes définissables}\label{sect_groupoids}
 
 Lorsque l'on étudie la structure fine des ensembles définissables dans une théorie ou structure donnée, la notion de \emph{revêtement} apparaît assez vite. Etant donnée une structure $\mathbb{U}$, un \emph{revêtement de} $\mathbb{U}$ \emph{via une\footnote{Nous nous concentrerons ici sur le cas d'une seule nouvelle sorte; généraliser la notion à plusieurs sortes, voire une infinité, ne pose pas de difficulté particulière.} nouvelle sorte} $S$ est une structure $\mathbb{U}'$, dont l'ensemble sous-jacent est l'union disjointe de celui de $\mathbb{U}$ et de $S$, telle que la structure définissable induite sur $\mathbb{U}$ coïncide avec celle d'origine. On dit aussi que $\mathbb{U}$ est \emph{stablement plongée} dans $\mathbb{U}'$. Un fait important, qui explique la terminologie, est que, dans une structure stable, tout ensemble définissable est stablement plongé.
 
@@ -195,7 +242,7 @@ Cette construction est proche de celle de Jimenez; la principale différence est
 
 
 
-\section{Configurations de groupe génériquement stables}
+\section{Configurations de groupe génériquement stables}\label{sect_config_group}
 
 Le principe du théorème de configuration de groupe est de \emph{détecter la présence d'un groupe définissable} \emph{à partir de données combinatoires}. Ce résultat s'inscrit dans le domaine de la \emph{théorie géométrique des modèles}, dont on rappelle qu'elle consiste à étudier les théories du premier ordre à travers les structures algébriques définissables qui y apparaissent. 
 
@@ -275,7 +322,7 @@ Pour ce qui est des applications, au vu des résultats obtenus dans des contexte
 
 
 
-\section{Groupes et corps interprétables dans des théories de corps}
+\section{Groupes et corps interprétables dans des théories de corps}\label{sect_interp_groups}
 
 Dans \cite{Wang_interp_groups_2025}, j'étudie la structure des groupes et des corps définissables/interprétables, à la fois dans des cadres abstraits et pour des exemples explicites de théories de corps valués.
 
@@ -299,7 +346,7 @@ Pour la suite, un corps valué est donné par un corps $K$, un groupe abélien o
 		\item Pour tout nombre premier $p$, et tout réel $r$ avec $0 < r <1$, le complété de $\mathbb{Q}$ selon la norme $p$-adique, noté $\mathbb{Q}_p$. On l'appelle le corps des nombres $p$-adiques, et, à ismorphisme près, il ne dépend pas du choix de $r$. 
 		\item Pour tout corps $K$, le corps des fractions rationnelles $K(t)$, avec une norme associée à la valuation $t$-adique.
 		\item Pour tout corps $K$, le corps des séries de Laurent $K((t))$, avec une norme $t$-adique, qui est le complété de $K(t)$.
-		\item Pour tout corps $K$ et tout groupe abélien ordonné $\Gamma$, le corps de séries de Hahn $K(X^{\Gamma})$, dont les éléments sont les fonctions de $\Gamma$ dans $K$ à support co-bien ordonné (i.e. bien ordonné pour l'ordre dual de $\Gamma$); la somme est définie terme à terme, et le produit est calculé par convolution.
+		\item Pour tout corps $K$ et tout groupe abélien ordonné $\Gamma$, le corps de séries de Hahn $K((t^{\Gamma}))$, dont les éléments sont les fonctions de $\Gamma$ dans $K$ à support bien ordonné, pour l'ordre induit par $\Gamma$; la somme est calculée terme à terme, et le produit est défini par convolution.
 
 	\end{itemize}
 
@@ -324,7 +371,7 @@ Un point important est que le corps (valué) définissable en question peut avoi
 	
 	\item Le théorème le plus général jusqu'ici est \cite[Theorem 2.19]{Stabilizers-NTP2}. Rappelons qu'un groupe discret est \emph{moyennable} s'il existe une mesure de probabilité finiment additive, invariante à gauche, définie sur tous les sous-ensembles. Alors, un groupe définissable, dans une certaine théorie, est dit \emph{définissablement moyennable} s'il admet une mesure de probabilité finiment additive, invariante à gauche, définie sur les ensembles définissables. Le théorème 2.19 de Montenegro, Onshuus et Simon traite des groupes définissablement moyennables dans toutes les théories de corps parfaits ayant des propriétés modèles-théoriques raisonnables\footnote{En l'occurrence, qui sont $\mathrm{NTP_2}$ et où les clôtures algébriques au sens de la théorie des modèles et au sens des corps coïncident.}. 
 	
-	\item Dans le contexte plus spécifique des corps valués\footnote{Ultramétriques, pas nécessairement de rang un.}, sous certaines hypothèses techniques, la classification des corps interprétables a été réalisée dans \cite[Theorem 7.1]{fields_interp_in_various_val_fields} : les seuls corps interprétables sont les extensions finies du corps ambiant ou du corps résiduel. D'autres résultats incluent les travaux réalisés dans \cite{ppp_def_groups_codf}, qui prouvent que les groupes définissables dans divers corps différentiels peuvent être définissablement plongés dans des groupes algébriques, et \cite[Theorem 1]{semisimple_groups_interp_in_various_val_fields}, montrant que les groupes définissablement semi-simples interprétables dans des enrichissements de corps valués algébriquement clos, réels clos ou  p-adiquement clos, sont virtuellement isogènes à des produits de groupes linéaires sur le corps valué et sur le corps résiduel. Dans le cas spécifique des corps valués algébriquement clos purs, la classification des corps interprétables a été initialement prouvée dans \cite{HruRK-MetaGp}, en utilisant une notion appelée métastabilité, qui se concentre sur les types génériquement stables. Enfin, dans le cadre de la 1-h-minimalité, une notion visant à capturer l'idée de géométrie modérée dans des contextes non archimédiens, il est montré dans \cite{AcoHass-1hmin} que, comme dans le cas réel, les groupes définissables admettent une structure de Lie, et que les seuls corps définissables sont les extensions finies du corps ambiant. 
+	\item Dans le contexte plus spécifique des corps valués, sous certaines hypothèses techniques, la classification des corps interprétables a été réalisée dans \cite[Theorem 7.1]{fields_interp_in_various_val_fields} : les seuls corps interprétables sont les extensions finies du corps ambiant ou du corps résiduel. D'autres résultats incluent les travaux réalisés dans \cite{ppp_def_groups_codf}, qui prouvent que les groupes définissables dans divers corps différentiels peuvent être définissablement plongés dans des groupes algébriques, et \cite[Theorem 1]{semisimple_groups_interp_in_various_val_fields}, montrant que les groupes définissablement semi-simples interprétables dans des enrichissements de corps valués algébriquement clos, réels clos ou  p-adiquement clos, sont virtuellement isogènes à des produits de groupes linéaires sur le corps valué et sur le corps résiduel. Dans le cas spécifique des corps valués algébriquement clos purs, la classification des corps interprétables a été initialement prouvée dans \cite{HruRK-MetaGp}, en utilisant une notion appelée métastabilité, qui se concentre sur les types génériquement stables. Enfin, dans le cadre de la 1-h-minimalité, une notion visant à capturer l'idée de géométrie modérée dans des contextes non archimédiens, il est montré dans \cite{AcoHass-1hmin} que, comme dans le cas réel, les groupes définissables admettent une structure de Lie, et que les seuls corps définissables sont les extensions finies du corps ambiant. 
 
 
 \end{itemize}
@@ -358,7 +405,7 @@ Ces résultats englobent dans un cadre général la grande majorité des exemple
 
 
 
-\section{Corps valués D-henseliens et types génériquement stables}
+\section{Corps valués D-henseliens et types génériquement stables}\label{sect_VDF}
 
 Dans les corps valués différentiellement clos, la dérivation a un comportement générique par rapport à la valuation : toutes les équations différentielles non triviales possèdent des ensembles denses de solutions. Bien que cette hypothèse facilite l'étude par des méthodes de théorie des modèles, on peut vouloir considérer des corps valués différentiels où la dérivation est continue pour la topologie de la valuation, comportement plus satisfaisant d'un point de vue géométrique. Comme montré dans \cite{Sca-DValF}, il existe toute une famille de théories complètes du premier ordre intéressantes pour les corps valués différentiels d'équicaractéristique $0$, avec des dérivations $1$-Lipschitz ; ces corps sont parfois appelés $D$-Henséliens. Je me suis concentré sur le cas le plus générique, à savoir celui où le corps résiduel, avec dérivation induite, est un corps différentiellement clos; je note cette théorie $VDF$. Des exemples de structures vérifiant ces axiomes sont donnés par les corps de séries de Hahn $K((t^{\Gamma}))$, où $\Gamma$ est un groupe abélien ordonné divisible, le corps résiduel $K$ est un corps différentiellement clos, et la dérivation est construite à partir de celle de $K$ en dérivant terme à terme les coefficients. 
 
@@ -405,7 +452,7 @@ Cependant, une propriété plus faible est vérifiée : tout élément du corps 
 Une autre classe de structures intéressantes où ces idées pourraient s'adapter est celle des corps valués avec automorphismes\footnote{Dont on demande qu'ils soient des isométries \cite{AzgvdD}, ou bien qu'ils soient contractants \cite{Dor_Halevi_w_Kaplan_2025}, pour la valuation.}, où, de même que pour $VDF$, certaines équations faisant intervenir l'automorphisme ont une unique solution.
 
 
-\section{Domination résiduelle dans les corps valués henseliens}
+\section{Domination résiduelle dans les corps valués henseliens}\label{sect_resdom}
 
 La notion de \emph{domination stable}, brièvement mentionnée plus haut, a été introduite par Haskell, Hrushovski et Macpherson \cite{hhm}, pour étudier les corps valués algébriquement clos. 
 Le point de départ est le constat suivant: les structures et théories stables ont de très bonnes propriétés de régularité modèle-théoriques; cependant, bon nombre de théories et structures intéressantes n'étant pas stables, on ne peut appliquer telle quelle la théorie de la stabilité. 
