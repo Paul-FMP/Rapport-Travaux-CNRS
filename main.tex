@@ -521,13 +521,16 @@ Pour cet article, une bonne partie des idées ont été le résultat d'interacti
 
 La théorie catégorique des systèmes\footnote{Voir par exemple l'introduction de \cite{Libkind_Myers_2025}.} vise à donner un cadre théorique unifié pour l'étude de systèmes dynamiques, les aspects techniques reposant sur des notions de théorie des catégories. Plusieurs directions ont émergé de ce champ de recherches au fil du temps; les deux plus importantes, en ce qui concerne ma recherche, sont l'approche fondée sur les \emph{catégories monoidales symétriques}, possiblement avec de la structure additionnelle (voir \ref{subs_smc}), et le \emph{point de vue coalgébrique} sur les systèmes (voir \ref{subs_coalg}). En effet, mon travail s'inscrit dans la nouvelle branche appelée \emph{théorie doublement catégorique}, ou \emph{doublement opéradique}, des systèmes \cite{Myers_2021} \cite{Libkind_Myers_2025}, qui vise à combiner les deux approches susmentionnées dans un seul cadre; il repose également sur la théorie synthétique des probabilités. Il me semble utile de commencer par rappeler en quoi consistent les points de vue "monoidal symétrique" et "coalgébrique", ainsi que la théorie synthétique des probabilités, avant d'expliquer les enjeux et questions en théorie doublement catégorique des systèmes, et mes contributions.
 
-\section{Point de vue doublement catégorique}
+\section{Vers un point de vue doublement catégorique}
 
 \subsection{Approche monoidale symétrique}\label{subs_smc}
 Une catégorie monoidale symétrique est une structure contenant des objets, des morphismes entre ces objets, une opération de produit sur les objets (muni de symétries canoniques), et des opérations de composition séquentielle et parallèle sur les morphismes, vérifiant des propriétés algébriques raisonnables (associativité, etc.). L'intérêt pour la représentation de systèmes dynamiques est le suivant: si l'on peut représenter les espaces d'entrées ou de sorties possibles comme des objets,  les systèmes comme des morphismes, et que l'on dispose effectivement d'opérations de compositions parallèle et séquentielle de systèmes, alors \emph{la théorie des catégories monoidales symétriques fournit automatiquement une syntaxe et des outils de raisonnement}. Les plus emblématiques sont les \emph{diagrammes de cordes}\footnote{Appelés \emph{string diagrams} en anglais; voir par exemple la page du nLab sur le sujet: \url{ncatlab.org/nlab/show/string+diagram}.}, qui permettent des calculs rigoureux fondés sur des manipulations graphiques des diagrammes. 
 
 
 Une des applications les plus marquantes est le \emph{ZX-calculus} \cite{Danos_Kashefi_Panangaden_2007}, utilisé pour représenter des calculs quantiques à base de qbits, dont les vertus pédagogiques, découlant vraisemblablement de l'approche graphique et de la relative simplicité du langage, ont été testées expérimentalement \cite{Coecke_Kissinger_Gogioso_Dündar-Coecke_Puca_Yeh_Waseem_Pothos_Pfaendler_Wang-Mascianica_et_al._2025}. 
+
+
+L'accent mis sur la structure des systèmes composites permet de démontrer des résultats de manière modulaire: par exemple, dans \cite{Broadbent_Karvonen_2023}, Broadbent et Karvonen formalisent le paradigme de \emph{cryptographie universellement composable}, en définissant une notion flexible et structurée de \emph{modèles d'attaques}, et de \emph{sécurité} de processus contre de tels modèles d'attaque. Dans leur cadre, fondé sur la notion de catégorie monoidale symétrique, ils démontrent des résultats de \emph{préservation des propriétés de sécurité par composition} \cite[Theorem 4.6]{Broadbent_Karvonen_2023}. Ils utilisent également le langage graphique des catégories monoidales symétriques pour redémontrer, de manière rigoureuse \emph{et} visuelle, certains résultats de base en cryptographie \cite[Sections 6, 7 et 8]{Broadbent_Karvonen_2023}.
 
 
 \subsection{Point de vue coalgébrique}\label{subs_coalg}
@@ -545,9 +548,10 @@ Pour illustrer le point de vue coalgébrique sur les systèmes, utilisons l'exem
 
 
 
-Partant de ce principe, l'on peut ensuite définir\footnote{Il s'agit davantage d'\emph{identifier une structure commune} à des théories de systèmes, d'\emph{organiser l'information}, que de mener une étude axiomatique approfondie à partir de telles définitions.} un système comme étant une coalgèbre pour un foncteur $F: \CC \rightarrow \CC$, étant entendu que la notion dépend fortement de $F$, en particulier, le choix de $F$ détermine une "interface" commune. Une \emph{simulation} d'un système vers un autre est alors simplement un morphisme de coalgèbres; dans la plupart des exemples, cette notion traduit l'idée de "morphisme de comparaison entre espaces d'états, \emph{agissant identiquement sur les interfaces}, compatible avec les dynamiques des systèmes considérés". Des notions plus symétriques, de \emph{bisimulation} et \emph{bisimilarité}, peuvent ensuite être définies \cite{Staton_2009}.
+Partant de ce principe, l'on peut ensuite définir, suivant par exemple Rutten \cite{Rutten_2000}, \footnote{Il s'agit davantage d'\emph{identifier une structure commune} à des théories de systèmes, d'\emph{organiser l'information}, que de mener une étude axiomatique approfondie à partir de telles définitions.} un système comme étant une coalgèbre pour un foncteur $F: \CC \rightarrow \CC$, étant entendu que la notion dépend fortement de $F$, en particulier, le choix de $F$ détermine une "interface" commune. Une \emph{simulation} d'un système vers un autre est alors simplement un morphisme de coalgèbres; dans la plupart des exemples, cette notion traduit l'idée de "morphisme de comparaison entre espaces d'états, \emph{agissant identiquement sur les interfaces}, compatible avec les dynamiques des systèmes considérés". Des notions plus symétriques, de \emph{bisimulation} et \emph{bisimilarité}, peuvent ensuite être définies \cite{Staton_2009}.
 
 
+L'intérêt de ce point de vue est de permettre un traitement uniforme: par exemple, dans \cite{Wissmann_Dorsch_Milius_Schröder_2020}, un algorithme générique de minimisation de systèmes est présenté, i.e. qui calcule un système simple ayant même comportement observable que le système de départ. Sous hypothèses techniques modérées, les auteurs développent une version  optimisée, ayant les mêmes performances asymptotiques que les meilleurs algorithmes spécifiques. Leur point de vue général leur permet de traiter des systèmes qui combinent des types de transitions différents: non-déterminisme, probabilités, etc.  
 %Le point de vue coalgébrique a donné lieu à un certain nombre de développements, notamment au niveau logique \cite{Kurz} \cite{Gallardo_Viglizzo_2024}; l'un des objectifs à moyen terme de mon  programme de recherche est d'adapter, si cela s'avère possible, ces travaux au cadre doublement catégorique.
 
 
@@ -615,10 +619,16 @@ Au niveau technique, cela repose sur l'utilisation de \emph{catégories doubles}
 
 
 \subsection{Travaux existants}
+
+Voici une sélection de travaux pertinents vis-à-vis de nos questions.
+
 \begin{itemize}
-	\item Dans \cite{Baez_Courser_2018}, une catégorie (monoidale symétrique) double est construite, où une direction encode des processus de Markov ouverts, donc des systèmes probabilistes, et l'autre des fonctions de \emph{coarse-graining}. La principale restriction est que ces fonctions sont déterministes. Un autre point est la focalisation sur les compositions séquentielle et parallèle, aux dépens des schémas de composition plus généraux.
+
+	\item Dans \cite{Katis_Sabadini_Walters_1997}, Katis, Sabadini et Walters construisent des bicatégories\footnote{Notion de "2-catégorie non nécessairement stricte".} de processus, où les $2$-cellules représentent des simulations entre processus, i.e. des comparaisons entre états internes, à comportement observable fixé. 
 	
-    \item 
+
+	\item Dans \cite{Baez_Courser_2018}, une catégorie (monoidale symétrique) double est construite, où une direction encode des processus de Markov ouverts, donc des systèmes probabilistes, et l'autre des fonctions de \emph{coarse-graining}. La principale restriction est que ces fonctions sont déterministes. Un autre point est la focalisation sur les compositions séquentielle et parallèle, aux dépens des schémas de composition plus généraux.
+	\item Dans \cite{Lavore_Felice_Román_2025}, les systèmes à temps discret sont représentés par des suites finies de fonctions nondéterministes $M_{n-1} \times X_1 \times \cdots \times X_n \rightarrow M_n \times Y_1 \times \cdots \times Y_n$, compatibles avec les projections oubliant les dernières coordonnées; ici $M_n$ représente la mémoire à l'instant $n$, les $X_i$ correspondent aux entrées, et les $Y_i$ aux sorties. Les structures obtenues sont des \emph{catégories monoidales symétriques avec feedback}. Cet article n'aborde pas la question $2$-catégorique, mais des notions similaires à \cite{Katis_Sabadini_Walters_1997} existent sans doute.
 
 	\item Dans \cite{DCST-book} et \cite{Libkind_Myers_2025}, les constructions utilisent la notion de \emph{monade commutative} pour le nondéterminisme; elles donnent bien des catégories doubles, mais la notion de simulation généralisée est trop restrictive, comme expliqué dans \cite[Fin de la section 3.5]{DCST-book}.
 
@@ -645,7 +655,7 @@ Au niveau technique, mes constructions reposent sur un certain nombre d'idées.
 	
 \begin{enumerate}
 	\item La catégorie de Markov $\CC$ avec lois conditionnelles représente la notion de nondéterminisme de la théorie de systèmes à construire.
-	\item Le graphe $\GG$ représente la notion de temps considérée; pour des raisons propres au nondéterminisme\footnote{Précisément, le fait qu'une loi sur un produit contienne plus d'information que la donnée de ses marginales.}, et par absence de structure monoidale close ou cartésienne close pertinente\footnote{C'est-à-dire où les espaces de morphismes seraient représentés par des objets de la catégorie elle-même.}, je traite le temps de manière externe à $\CC$. 
+	\item Le graphe $\GG$ représente la notion de temps considérée; pour des raisons propres au nondéterminisme\footnote{Précisément, le fait qu'une loi sur un produit contienne plus d'information que la donnée de ses marginales.}, et par absence de structure monoidale close ou cartésienne close pertinente\footnote{C'est-à-dire où les espaces de morphismes seraient représentés par des objets de la catégorie elle-même.}, je traite le temps de manière externe à $\CC$. En effet, de même que \cite{Lavore_Felice_Román_2025}, je vois les systèmes, et morphismes, comme des familles de "fonctions nondéterministes" compatibles avec des fonctions de restriction oubliant les derniers instants.
 	\item L'existence de lois conditionnelles dans $\CC$ permet de définir la composée verticale des $2$-cellules, ce qui correspond à \emph{construire des trajectoires jointes de systèmes composés}, en faisant une \emph{hypothèse d'indépendance conditionnelle des composants relativement à l'information aux interfaces}. 
 	\item A partir de l'idée du point ci-dessus, l'essentiel du travail technique consiste à vérifier les propriétés algébriques requises; associativité et échange demandent le plus d'efforts.
 	\item Afin de simplifier la rédaction, ainsi que les démonstrations futures de fonctorialité de la construction vis-à-vis de $\CC$ et de $\GG$, je construis d'abord des \emph{catégories triples}, où la dimension supplémentaire sert à gérer le temps, avant d'en déduire les catégories doubles voulues comme catégories de foncteurs "de source $\GG$" à valeurs dans ces catégories triples.
