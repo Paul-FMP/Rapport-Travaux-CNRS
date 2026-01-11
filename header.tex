@@ -70,6 +70,8 @@ giveninits=true,
 doi=false,
 url=true,
 isbn=false]{biblatex}
+\AtEveryBibitem{\clearfield{month}\clearlist{language}}
+
 \renewbibmacro{in:}{}
 
 \addbibresource{bibliography.bib}
